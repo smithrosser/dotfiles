@@ -1,32 +1,29 @@
-" Load plugins using vim-plug
+" Enable vim-plug & various plugins
 call plug#begin('~/.config/nvim/plugged')
-	Plug 'morhetz/gruvbox'
+	Plug 'tpope/vim-sensible'
+	Plug 'arcticicestudio/nord-vim'
 	Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 	Plug 'junegunn/vim-easy-align'
 	Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
-" Open NERDTree on startup (then switch focus to document)
-autocmd vimenter * NERDTree
-autocmd vimenter * wincmd w
-
 " Basic vim prefs
 set relativenumber
 set cursorline
-set numberwidth=5
+set numberwidth=4
+set tabstop=4
+set shiftwidth=4
 
-" Gruvbox theme prefs
-let g:gruvbox_bold = '1'
-let g:gruvbox_italic = '1'
-let g:gruvbox_termcolors = '256'
-let g:gruvbox_contrast_dark = 'soft'
-colo gruvbox
+" Nord colour scheme
+set termguicolors
+let g:nord_comment_brightness=10
+colorscheme nord
 
-" Some nice keymaps
-map :nt<CR> :NERDTreeToggle<CR>
-" map :wq<CR> :wqa <CR>
+" Some handy keymaps
+autocmd vimenter * NERDTree
+autocmd vimenter * wincmd w
 
-" Custom statusline (stolen from kadekillary.work)
+" Custom statusbar
 set laststatus=2
 set statusline=
 set statusline+=%2*\ %l
