@@ -17,4 +17,7 @@ set termguicolors
 colorscheme dracula
 hi Normal guibg=NONE ctermbg=NONE
 
+" NERDTree remaps
+nnoremap <C-n> :NERDTree<CR>
+
 let g:lightline = { 'colorscheme': 'one', }
