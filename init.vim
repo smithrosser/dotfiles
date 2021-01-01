@@ -1,6 +1,7 @@
 call plug#begin('~/.vim/plugged')
 	Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 	Plug 'clangd/coc-clangd'
+	Plug 'maxmellon/vim-jsx-pretty'
 	Plug 'scrooloose/nerdtree'
 	Plug 'kien/ctrlp.vim'
 	Plug 'jiangmiao/auto-pairs'
