@@ -40,6 +40,9 @@ git clone https://github.com/supercomputra/SF-Mono-Font.git
 sudo mv SF-Mono-Font /usr/share/fonts/SF-Mono
 fc-cache -fv
 
+echo "Disabling Ubuntu dock..."
+sudo apt remove gnome-shell-extension-ubuntu-dock
+
 echo "Installing Gnome Tweaks..."
 sudo apt install gnome-tweak-tool
 
@@ -49,5 +52,5 @@ echo "Installing oh-my-zsh..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 echo "Finished!"
-
 echo "Still to do manually: arm-none-eabi, Alacritty, ArcMenu, icons, Teams, VSCode extensions."
+echo "Remember to reboot!"
