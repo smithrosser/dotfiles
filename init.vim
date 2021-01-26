@@ -8,7 +8,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'scrooloose/nerdtree'
 	Plug 'kien/ctrlp.vim'
 	Plug 'jiangmiao/auto-pairs'
-	Plug 'joshdick/onedark.vim'
+	Plug 'dracula/vim'
 	Plug 'itchyny/lightline.vim'
 call plug#end()
 
@@ -22,7 +22,7 @@ set mouse=a
 set guifont=Office\ Code\ Pro
 
 set termguicolors
-colorscheme onedark
+colorscheme dracula
 hi Normal guibg=NONE ctermbg=NONE
 
 " NERDTree remaps
