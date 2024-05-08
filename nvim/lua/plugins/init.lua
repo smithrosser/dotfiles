@@ -1,4 +1,6 @@
 return {
+  "svelte-language-server",
+  "tailwind-language-server",
   {
     "stevearc/conform.nvim",
     event = "BufWritePre", -- uncomment for format on save
@@ -28,6 +30,9 @@ return {
         "cmakelang",
         "pyright",
         "autopep8",
+        "eslint-lsp",
+        "svelte-language-server",
+        "tailwindcss-language-server",
       },
     },
   },
@@ -46,6 +51,7 @@ return {
         "markdown",
         "json",
         "cmake",
+        "javascript",
       },
     },
   },

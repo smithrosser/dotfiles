@@ -6,6 +6,7 @@ local options = {
     json = { "prettier" },
     yaml = { "prettier" },
     toml = { "prettier" },
+    javascript = { "prettier" },
     c = { "clang-format" },
     cpp = { "clang-format" },
     cmake = { "cmakelang" },
