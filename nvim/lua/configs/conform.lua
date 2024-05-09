@@ -11,11 +11,12 @@ local options = {
     cpp = { "clang-format" },
     cmake = { "cmakelang" },
     python = { "autopep8" },
+    rust = { "rustfmt" },
   },
 
   format_on_save = {
     -- These options will be passed to conform.format()
-    timeout_ms = 500,
+    timeout_ms = 250,
     lsp_fallback = true,
   },
 }

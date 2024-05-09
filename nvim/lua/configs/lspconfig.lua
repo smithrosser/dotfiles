@@ -5,15 +5,16 @@ local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
 local servers = {
+  "lua_ls",
   "html",
   "cssls",
-  "lua_ls",
-  "cmake",
-  "clangd",
-  "pyright",
-  "eslint",
   "svelte",
   "tailwindcss",
+  "eslint",
+  "clangd",
+  "cmake",
+  "pyright",
+  "rust_analyzer",
 }
 
 -- lsps with default config

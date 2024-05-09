@@ -15,21 +15,50 @@ return {
   },
   {
     "williamboman/mason.nvim",
-    config = function()
-      require "configs.mason"
-    end,
+    opts = {
+      ensure_installed = {
+        "lua-language-server",
+        "stylua",
+        "prettier",
+        "html-lsp",
+        "css-lsp",
+        "clangd",
+        "clang-format",
+        "cmake-language-server",
+        "cmakelang",
+        "pyright",
+        "autopep8",
+        "eslint-lsp",
+        "svelte-language-server",
+        "tailwindcss-language-server",
+        "rust-analyzer",
+      },
+    },
   },
   {
     "nvim-treesitter/nvim-treesitter",
-    config = function()
-      require "configs.treesitter"
-    end,
+    opts = {
+      ensure_installed = {
+        "vim",
+        "lua",
+        "vimdoc",
+        "html",
+        "css",
+        "c",
+        "cpp",
+        "python",
+        "markdown",
+        "json",
+        "cmake",
+        "javascript",
+        "rust",
+      },
+    },
   },
   {
     "cdelledonne/vim-cmake",
     config = function()
       require "configs.vim-cmake"
     end,
-    lazy = false,
   },
 }
