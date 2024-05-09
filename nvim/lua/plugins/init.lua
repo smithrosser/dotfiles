@@ -61,4 +61,19 @@ return {
       require "configs.vim-cmake"
     end,
   },
+  {
+    "vigoux/notifier.nvim",
+    config = function()
+      require "configs.notifier"
+    end,
+    lazy = false,
+  },
+  {
+    "xiyaowong/virtcolumn.nvim",
+    event = "BufEnter *.*",
+    config = function()
+      vim.g.virtcolumn_char = "▕"
+      vim.g.virtcolumn_priority = 10
+    end,
+  },
 }
