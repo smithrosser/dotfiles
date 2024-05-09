@@ -11,6 +11,7 @@ vim.opt.list = true
 vim.opt.wrap = false
 vim.opt.scrolloff = 8
 vim.opt.colorcolumn = "120"
+vim.opt.relativenumber = true
 
 -- Indenting
 vim.opt.tabstop = 4
