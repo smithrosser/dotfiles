@@ -27,6 +27,12 @@ if [ -d ~/.wezterm.lua ]; then
 fi
 ln -sf $DOTFILES_DIR/wezterm.lua .wezterm.lua
 
+echo "Linking .tmux.conf..."
+if [ -d ~/.tmux.conf ]; then
+  rm .wezterm.lua
+fi
+ln -sf $DOTFILES_DIR/tmux.conf .tmux.conf
+
 popd
 
 echo Done
