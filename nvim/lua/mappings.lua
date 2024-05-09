@@ -7,6 +7,23 @@ local map = vim.keymap.set
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 
+-- Suppress arrow keys lol
+local function reminder(key)
+  vim.notify("did you mean '" .. key .. "'?")
+end
+map({ "n", "i" }, "<Left>", function()
+  reminder "h"
+end)
+map({ "n", "i" }, "<Down>", function()
+  reminder "j"
+end)
+map({ "n", "i" }, "<Up>", function()
+  reminder "k"
+end)
+map({ "n", "i" }, "<Right>", function()
+  reminder "l"
+end)
+
 -- Fuzzy finder
 map("n", "<leader>ff", require("telescope.builtin").git_files, { desc = "Telescope: search Git files" })
 map("n", "<leader>pf", require("telescope.builtin").find_files, { desc = "Telescope: search Git files" })
