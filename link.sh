@@ -33,6 +33,12 @@ if [ -d ~/.tmux.conf ]; then
 fi
 ln -sf $DOTFILES_DIR/tmux.conf .tmux.conf
 
+echo "Linking quickstart.sh..."
+if [ -d ~/quickstart ]; then
+  rm quickstart
+fi
+ln -sf $DOTFILES_DIR/quickstart.sh quickstart
+
 popd
 
 echo Done
