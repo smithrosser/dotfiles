@@ -2,10 +2,6 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
--- Open Git Bash instead of PS/CMD
--- (note: this is for windows)
-config.default_prog = { "C:\\Program Files\\Git\\bin\\bash.exe" }
-
 config.launch_menu = {
 	{
 		label = "ssh (ralo.vmf)",
@@ -17,7 +13,7 @@ config.launch_menu = {
 	},
 	{
 		label = "git bash",
-		args = "C:\\Program Files\\Git\\bin\\bash.exe",
+		args = { "C:\\Program Files\\Git\\bin\\bash.exe" },
 	},
 }
 
