@@ -29,8 +29,6 @@ return {
         "pyright",
         "autopep8",
         "eslint-lsp",
-        "svelte-language-server",
-        "tailwindcss-language-server",
         "rust-analyzer",
       },
     },
@@ -52,11 +50,14 @@ return {
         "cmake",
         "javascript",
         "rust",
+        "proto",
+        "go",
       },
     },
   },
   {
     "cdelledonne/vim-cmake",
+    event = "BufEnter",
     config = function()
       require "configs.vim-cmake"
     end,

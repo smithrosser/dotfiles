@@ -11,7 +11,6 @@ local servers = {
   "svelte",
   "tailwindcss",
   "eslint",
-  "clangd",
   "cmake",
   "pyright",
   "rust_analyzer",
@@ -28,6 +27,14 @@ end
 
 -- typescript
 lspconfig.tsserver.setup {
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+}
+
+-- tell clangd to ignore .proto files (seems not to work)
+lspconfig.clangd.setup {
+  filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
   on_attach = on_attach,
   on_init = on_init,
   capabilities = capabilities,

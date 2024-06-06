@@ -100,7 +100,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vi="nvim"
-alias vic="pushd ~/ws/dotfiles && vi && popd"
+alias vivi="pushd ~/dotfiles && vi && popd"
+alias ls="ls -ah --color=auto"
+alias ll="ls -al --color=auto"
 alias vmf="~/ws/cpp/ralo-vmf-proto/"
 
 export NVM_DIR="$HOME/.nvm"
