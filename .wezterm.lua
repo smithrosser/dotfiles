@@ -6,6 +6,21 @@ local config = wezterm.config_builder()
 -- (note: this is for windows)
 config.default_prog = { "C:\\Program Files\\Git\\bin\\bash.exe" }
 
+config.launch_menu = {
+	{
+		label = "ssh (ralo.vmf)",
+		args = { "ssh", "vmf" },
+	},
+	{
+		label = "ssh (potato)",
+		args = { "ssh", "potato" },
+	},
+	{
+		label = "git bash",
+		args = "C:\\Program Files\\Git\\bin\\bash.exe",
+	},
+}
+
 -- Appearance
 config.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
 config.color_scheme = "Catppuccin Macchiato"
