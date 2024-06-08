@@ -5,10 +5,14 @@
 local M = {}
 
 M.ui = {
-  theme = "catppuccin",
+  theme = "everforest",
   hl_override = {
     Comment = { italic = true },
     ["@comment"] = { italic = true },
+  },
+  statusline = {
+    theme = "minimal",
+    overriden_modules = nil,
   },
 }
 
