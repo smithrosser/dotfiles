@@ -14,6 +14,7 @@ local servers = {
   "cmake",
   "pyright",
   "rust_analyzer",
+  "glsl_analyzer",
 }
 
 -- lsps with default config

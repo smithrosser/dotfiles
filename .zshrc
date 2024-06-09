@@ -94,12 +94,28 @@ source $ZSH/oh-my-zsh.sh
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
+
+# Neovim aliases
 alias vi="nvim"
 alias vivi="pushd ~/dotfiles && vi && popd"
+
+# Quick access to workspace folders
+ws () {
+  cd ~/ws/$1
+}
+
+# Always show hidden files with ls
 alias ls="ls -ah --color=auto"
 alias ll="ls -al --color=auto"
-alias cppws="cd ~/ws/cpp"
+
+# Suppress 'clear' command so I can scroll up still
+alias clear="echo \"did you mean '^L?'\""
+
+# Quick git wrangling
+alias gs="git status"
+alias ga="git add -A"
+alias gc="git commit -m "
+alias gp="git push"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

@@ -1,6 +1,6 @@
 [font]
-normal = { family = "Monaspace Argon" }
-size = 10.5
+normal = { family = "Monaspace Argon Medium" }
+size = 11
 offset = { y = 2 }
 
 # Colors (Everforest Dark)

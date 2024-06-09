@@ -33,7 +33,7 @@ map("n", "<leader>cg", "<CMD> CMakeGenerate <CR>", { desc = "CMake: Generate" })
 map("n", "<leader>cb", "<CMD> CMakeBuild <CR>", { desc = "CMake: Build" })
 map("n", "<leader>ci", "<CMD> CMakeInstall <CR>", { desc = "CMake: Install" })
 map("n", "<leader>ct", "<CMD> CMakeTest <CR>", { desc = "CMake: Test" })
-map("n", "<leader>cq", "<CMD> CMakeClose <CR>", { desc = "CMake: Close" })
+map("n", "<leader>cx", "<CMD> CMakeClose <CR>", { desc = "CMake: Close" })
 
 -- CMake run/stop command
 map("n", "<leader>cr", function()
