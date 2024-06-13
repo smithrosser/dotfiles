@@ -24,9 +24,19 @@ map({ "n", "i" }, "<Right>", function()
   reminder "l"
 end)
 
+-- Editor pane navigation
+local function jump_previous()
+  vim.cmd(vim.api.nvim_replace_termcodes("normal <C-w><C-p>", true, true, true))
+end
+map("n", "<leader>j", jump_previous, { desc = "Jump to previous window/split" })
+map("t", "<leader>;", jump_previous, { desc = "Jump from terminal to previous window/split" })
+map({ "n", "t" }, "<leader>;", function()
+  require("nvchad.term").toggle { pos = "float", id = "term" }
+end)
+
 -- Fuzzy finder
 map("n", "<leader>ff", require("telescope.builtin").git_files, { desc = "Telescope: search Git files" })
-map("n", "<leader>pf", require("telescope.builtin").find_files, { desc = "Telescope: search Git files" })
+map("n", "<leader>pf", require("telescope.builtin").find_files, { desc = "Telescope: search all files" })
 
 -- CMake commands
 map("n", "<leader>cg", "<CMD> CMakeGenerate <CR>", { desc = "CMake: Generate" })

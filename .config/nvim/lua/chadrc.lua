@@ -11,8 +11,7 @@ M.ui = {
     ["@comment"] = { italic = true },
   },
   statusline = {
-    theme = "minimal",
-    overriden_modules = nil,
+    theme = "vscode_colored",
   },
 }
 
