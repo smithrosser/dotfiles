@@ -11,7 +11,8 @@ M.ui = {
     ["@comment"] = { italic = true },
   },
   statusline = {
-    theme = "vscode_colored",
+    theme = "default",
+    separator_style = "arrow",
   },
 }
 
