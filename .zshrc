@@ -118,8 +118,13 @@ alias clear="echo \"did you mean '^L?'\""
 # Quick git wrangling
 alias gs="git status"
 alias ga="git add -A"
-alias gc="git commit -m "
+alias gc="git commit -m"
 alias gp="git push"
+
+# CMake stuff
+alias cb="cmake --build"
+alias cm="cmake"
+alias ct="ctest --output-on-failure"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

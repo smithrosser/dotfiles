@@ -24,12 +24,8 @@ return {
         "css-lsp",
         "clangd",
         "cmake-language-server",
-        "cmakelang",
         "pyright",
         "autopep8",
-        "eslint-lsp",
-        "rust-analyzer",
-        "glsl_analyzer",
       },
     },
   },
@@ -56,11 +52,15 @@ return {
     },
   },
   {
-    "cdelledonne/vim-cmake",
-    event = "BufEnter",
-    config = function()
-      require "configs.vim-cmake"
-    end,
+    "danymat/neogen",
+    config = true,
+  },
+  {
+    "pogyomo/cppguard.nvim",
+    dependencies = {
+      "L3MON4D3/LuaSnip", -- If you're using luasnip.
+    },
+    lazy = true,
   },
   {
     "vigoux/notifier.nvim",

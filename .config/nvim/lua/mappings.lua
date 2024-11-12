@@ -25,11 +25,6 @@ map({ "n", "i" }, "<Right>", function()
 end)
 
 -- Editor pane navigation
-local function jump_previous()
-  vim.cmd(vim.api.nvim_replace_termcodes("normal <C-w><C-p>", true, true, true))
-end
-map("n", "<leader>j", jump_previous, { desc = "Jump to previous window/split" })
-map("t", "<leader>;", jump_previous, { desc = "Jump from terminal to previous window/split" })
 map({ "n", "t" }, "<leader>;", function()
   require("nvchad.term").toggle { pos = "float", id = "term" }
 end)
@@ -54,3 +49,8 @@ map("n", "<leader>cr", function()
   end)
 end, { desc = "CMake: Run target" })
 map("n", "<leader>cs", "<CMD> CMakeStop <CR>", { desc = "CMake: Stop" })
+
+-- Generate doxygen comment
+map("n", "<leader>gf", function()
+  require("neogen").generate()
+end, { desc = "Neogen: Generate documentation under cursor" })

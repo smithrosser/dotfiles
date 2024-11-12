@@ -4,16 +4,19 @@
 ---@type ChadrcConfig
 local M = {}
 
-M.ui = {
+M.term = {
+  float = {
+    relative = "editor",
+    row = 0.15,
+    col = 0.1,
+    width = 0.8,
+    height = 0.7,
+    border = "single",
+  },
+}
+
+M.base46 = {
   theme = "everforest",
-  hl_override = {
-    Comment = { italic = true },
-    ["@comment"] = { italic = true },
-  },
-  statusline = {
-    theme = "default",
-    separator_style = "arrow",
-  },
 }
 
 return M

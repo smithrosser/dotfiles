@@ -8,13 +8,8 @@ local servers = {
   "lua_ls",
   "html",
   "cssls",
-  "svelte",
-  "tailwindcss",
-  "eslint",
   "cmake",
   "pyright",
-  "rust_analyzer",
-  "glsl_analyzer",
 }
 
 -- lsps with default config
@@ -25,13 +20,6 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
-
--- typescript
-lspconfig.tsserver.setup {
-  on_attach = on_attach,
-  on_init = on_init,
-  capabilities = capabilities,
-}
 
 -- tell clangd to ignore .proto files (seems not to work)
 lspconfig.clangd.setup {
