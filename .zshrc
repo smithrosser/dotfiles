@@ -103,10 +103,6 @@ alias vivi="pushd ~/dotfiles && vi && popd"
 ws () {
   cd ~/ws/$1/$2
 }
-viws () {
-  cd ~/ws/$1/$2
-  nvim
-}
 
 # Always show hidden files with ls
 alias ls="ls -ah --color=auto"
