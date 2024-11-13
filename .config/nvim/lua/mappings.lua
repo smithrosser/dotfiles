@@ -6,25 +6,9 @@ local map = vim.keymap.set
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
+map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
--- Suppress arrow keys lol
-local function reminder(key)
-  vim.notify("did you mean '" .. key .. "'?")
-end
-map({ "n", "i" }, "<Left>", function()
-  reminder "h"
-end)
-map({ "n", "i" }, "<Down>", function()
-  reminder "j"
-end)
-map({ "n", "i" }, "<Up>", function()
-  reminder "k"
-end)
-map({ "n", "i" }, "<Right>", function()
-  reminder "l"
-end)
-
--- Editor pane navigation
+-- Floating terminal
 map({ "n", "t" }, "<leader>;", function()
   require("nvchad.term").toggle { pos = "float", id = "term" }
 end)
@@ -33,24 +17,10 @@ end)
 map("n", "<leader>ff", require("telescope.builtin").git_files, { desc = "Telescope: search Git files" })
 map("n", "<leader>pf", require("telescope.builtin").find_files, { desc = "Telescope: search all files" })
 
--- CMake commands
-map("n", "<leader>cg", "<CMD> CMakeGenerate <CR>", { desc = "CMake: Generate" })
-map("n", "<leader>cb", "<CMD> CMakeBuild <CR>", { desc = "CMake: Build" })
-map("n", "<leader>ci", "<CMD> CMakeInstall <CR>", { desc = "CMake: Install" })
-map("n", "<leader>ct", "<CMD> CMakeTest <CR>", { desc = "CMake: Test" })
-map("n", "<leader>cx", "<CMD> CMakeClose <CR>", { desc = "CMake: Close" })
-
--- CMake run/stop command
-map("n", "<leader>cr", function()
-  vim.ui.input({
-    prompt = "Enter target > ",
-  }, function(target)
-    vim.cmd("CMakeRun " .. target)
-  end)
-end, { desc = "CMake: Run target" })
-map("n", "<leader>cs", "<CMD> CMakeStop <CR>", { desc = "CMake: Stop" })
-
--- Generate doxygen comment
+-- Generate documentation
 map("n", "<leader>gf", function()
   require("neogen").generate()
 end, { desc = "Neogen: Generate documentation under cursor" })
+
+-- Preview code actions
+map({ "v", "n" }, "<leader>ga", require("actions-preview").code_actions)

@@ -1,80 +1,59 @@
 return {
-  {
-    "stevearc/conform.nvim",
-    event = "BufWritePre", -- uncomment for format on save
-    config = function()
-      require "configs.conform"
-    end,
-  },
-  {
-    "neovim/nvim-lspconfig",
-    config = function()
-      require("nvchad.configs.lspconfig").defaults()
-      require "configs.lspconfig"
-    end,
-  },
+  --Package manager
   {
     "williamboman/mason.nvim",
+    config = function()
+      require("mason").setup {
+        registries = {
+          "github:Crashdummyy/mason-registry",
+          "github:mason-org/mason-registry",
+        },
+      }
+    end,
     opts = {
-      ensure_installed = {
-        "lua-language-server",
-        "stylua",
-        "prettier",
-        "html-lsp",
-        "css-lsp",
-        "clangd",
-        "cmake-language-server",
-        "pyright",
-        "autopep8",
-      },
+      ensure_installed = require "configs.packages",
     },
   },
+  -- Smart syntax parser
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
-      ensure_installed = {
-        "vim",
-        "lua",
-        "vimdoc",
-        "html",
-        "css",
-        "c",
-        "cpp",
-        "python",
-        "markdown",
-        "json",
-        "cmake",
-        "javascript",
-        "rust",
-        "proto",
-        "go",
-      },
+      ensure_installed = require "configs.parsers",
     },
   },
+  -- LSP configuration manager
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      require "configs.lspconfig"
+    end,
+  },
+  -- C#/.NET LSP
+  {
+    "seblj/roslyn.nvim",
+    ft = "cs",
+  },
+  -- Auto-formatter
+  {
+    "stevearc/conform.nvim",
+    event = "BufWritePre", -- enable format on save
+    opts = require "configs.conform",
+  },
+  -- Inline documentation generator
   {
     "danymat/neogen",
     config = true,
   },
+  -- Preview code actions
   {
-    "pogyomo/cppguard.nvim",
-    dependencies = {
-      "L3MON4D3/LuaSnip", -- If you're using luasnip.
-    },
-    lazy = true,
+    "aznhe21/actions-preview.nvim",
   },
+  -- Notifications in bottom right corner
   {
     "vigoux/notifier.nvim",
     config = function()
       require "configs.notifier"
     end,
     lazy = false,
-  },
-  {
-    "xiyaowong/virtcolumn.nvim",
-    event = "BufEnter *.*",
-    config = function()
-      vim.g.virtcolumn_char = "▕"
-      vim.g.virtcolumn_priority = 10
-    end,
   },
 }

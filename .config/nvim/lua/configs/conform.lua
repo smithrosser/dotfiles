@@ -1,32 +1,27 @@
 local options = {
   formatters_by_ft = {
+    -- Configs
     lua = { "stylua" },
+    -- Web
     css = { "prettier" },
     html = { "prettier" },
+    javascript = { "prettier" },
+    -- Data languages
     json = { "prettier" },
     yaml = { "prettier" },
     toml = { "prettier" },
-    javascript = { "prettier" },
+    -- Programming
     c = { "clang-format" },
     cpp = { "clang-format" },
+    csharp = { "csharpier" },
     python = { "autopep8" },
-    rust = { "rustfmt" },
   },
 
-  format_on_save = function(bufnr)
-    -- -- Prevent autoformat for CMake files
-    -- local bufname = vim.api.nvim_buf_get_name(bufnr)
-    -- if bufname:match "/\\.(cmake)$/" then
-    --   vim.notify "*.cmake file detected, not formatting..."
-    --   return
-    -- end
-    -- if bufname:match "/CMakeLists.txt/" then
-    --   vim.notify "CMakeLists.txt file detected, not formatting..."
-    --   return
-    -- end
-
-    return { timeout_ms = 250, lsp_format = "fallback" }
-  end,
+  format_on_save = {
+    -- These options will be passed to conform.format()
+    timeout_ms = 500,
+    lsp_fallback = true,
+  },
 }
 
-require("conform").setup(options)
+return options
