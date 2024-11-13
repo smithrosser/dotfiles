@@ -8,6 +8,7 @@ local packages = {
   "prettier",
   -- C/C++
   "clangd",
+  "clang-format",
   "cmake-language-server",
   -- C#
   "roslyn",

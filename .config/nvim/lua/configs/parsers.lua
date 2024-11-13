@@ -7,9 +7,10 @@ local parsers = {
   "html",
   "css",
   "javascript",
-  -- C/C++
+  -- C-like
   "c",
   "cpp",
+  "csharp",
   "cmake",
   -- Python
   "python",
