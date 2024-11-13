@@ -14,6 +14,16 @@ M.base46 = {
   },
 }
 
+M.ui = {
+  statusline = {
+    theme = "default",
+    separator_style = "arrow",
+  },
+  nvdash = {
+    load_on_startup = true,
+  },
+}
+
 -- Larger floating terminal
 M.term = {
   float = {

@@ -10,7 +10,7 @@ local parsers = {
   -- C-like
   "c",
   "cpp",
-  "csharp",
+  "c_sharp",
   "cmake",
   -- Python
   "python",
