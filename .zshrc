@@ -95,9 +95,30 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 
-# Neovim aliases
+# pushd/popd with supressed output
+npushd() {
+  pushd $@ > /dev/null
+}
+npopd() {
+  popd > /dev/null
+}
+
+# Neovim alias
 alias vi="nvim"
-alias vivi="pushd ~/dotfiles && vi && popd"
+
+# Edit dotfiles
+vivi() {
+  npushd ~/dotfiles
+  vi
+  npopd
+}
+
+# Edit .wezterm.lua (work PC only)
+viw() { 
+  npushd /mnt/c/Users/SMT1YOK
+  vi .wezterm.lua
+  npopd
+}
 
 # Quick access to workspace folders
 ws () {
@@ -116,6 +137,8 @@ alias gs="git status"
 alias ga="git add -A"
 alias gc="git commit -m"
 alias gp="git push"
+alias gb="git checkout"
+alias gn="git checkout -B"
 
 # CMake stuff
 alias cb="cmake --build"
