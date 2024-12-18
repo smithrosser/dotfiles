@@ -95,12 +95,12 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 
-# pushd/popd with supressed output
-npushd() {
-  pushd $@ > /dev/null
+# Suppress pushd/popd output
+pushd() {
+  builtin pushd "$@" > /dev/null;
 }
-npopd() {
-  popd > /dev/null
+popd() {
+  builtin popd > /dev/null;
 }
 
 # Neovim alias
@@ -108,16 +108,16 @@ alias vi="nvim"
 
 # Edit dotfiles
 vivi() {
-  npushd ~/dotfiles
+  pushd ~/dotfiles
   vi
-  npopd
+  popd
 }
 
 # Edit .wezterm.lua (work PC only)
-viw() { 
-  npushd /mnt/c/Users/SMT1YOK
+viw() {
+  pushd /mnt/c/Users/SMT1YOK
   vi .wezterm.lua
-  npopd
+  popd
 }
 
 # Quick access to workspace folders
