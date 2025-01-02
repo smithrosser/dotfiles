@@ -33,6 +33,10 @@ window#waybar {
     background: rgba(255, 255, 255, 0.2);
 }
 
+#workspaces button.urgent {
+  color: #c9545d;
+}
+
 #mode {
     background: #64727D;
     border-bottom: 3px solid white;

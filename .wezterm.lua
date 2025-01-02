@@ -1,13 +1,10 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
--- Wezterm config override handler for neovim
-local wezterm_config_nvim = wezterm.plugin.require('https://github.com/winter-again/wezterm-config.nvim')
-
 -- Appearance
 config.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
-config.color_scheme = "Everforest Dark (Gogh)"
-config.window_background_opacity = 0.8
+config.color_scheme = "Catppuccin Mocha (Gogh)"
+config.window_background_opacity = 0.75
 
 -- Font
 config.font_size = 12

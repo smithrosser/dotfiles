@@ -223,6 +223,7 @@ bar {
     }
 }
 
+# General appearance
 gaps inner 10
 default_border pixel 3
 default_floating_border normal
@@ -233,9 +234,17 @@ blur enabled
 blur_radius 10
 blur_noise 0.05
 
+assign [class="Spotify"] 3
+for_window [class="discord"] move container to workspace 4
 
-font pango:Cantarell Regular 10
-title_align center
+workspace 4
+exec discord
+workspace 3
+exec spotify
+workspace 2
+exec firefox
+workspace 1
+exec $term
 
 
 
