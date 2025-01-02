@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="alanpeabody"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -144,6 +144,13 @@ alias gn="git checkout -B"
 alias cb="cmake --build"
 alias cm="cmake"
 alias ct="ctest --output-on-failure"
+
+# Arch (btw) package wrangling
+alias pi="sudo pacman -S"
+alias yi="yay -S"
+
+# Source .zshrc
+alias rl="echo \"Reloading...\"; source ~/.zshrc"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
