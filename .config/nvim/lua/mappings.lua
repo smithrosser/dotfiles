@@ -14,8 +14,8 @@ map({ "n", "t" }, "<leader>;", function()
 end)
 
 -- Fuzzy finder
-map("n", "<leader>fp", require("telescope.builtin").git_files, { desc = "Telescope: search Git files" })
-map("n", "<leader>ff", require("telescope.builtin").find_files, { desc = "Telescope: search all files" })
+map("n", "<leader>ff", require("telescope.builtin").git_files, { desc = "Telescope: search Git files" })
+map("n", "<leader>fp", require("telescope.builtin").find_files, { desc = "Telescope: search all files" })
 map("n", "<leader>fd", require("telescope.builtin").live_grep, { desc = "Telescope: live grep" })
 
 -- Generate documentation
