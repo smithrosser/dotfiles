@@ -246,6 +246,4 @@ exec firefox
 workspace 1
 exec $term
 
-
-
 include /etc/sway/config.d/*
