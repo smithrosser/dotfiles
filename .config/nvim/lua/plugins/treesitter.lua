@@ -8,6 +8,8 @@ local parsers = {
   "html",
   "css",
   "javascript",
+  "typescript",
+  "angular",
 
   -- C-like
   "c",
@@ -19,10 +21,11 @@ local parsers = {
   "python",
 
   -- Data
+  "xml",
   "yaml",
   "toml",
   "json",
-  "xml",
+  "jsonc",
   "proto",
 
   -- Graphics

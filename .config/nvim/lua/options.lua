@@ -7,9 +7,10 @@ o.number = true
 o.relativenumber = true
 
 -- Whitespace rendering
+local sp_char = "·"
 o.listchars = {
-  space = "·",
-  trail = "·",
+  space = sp_char,
+  trail = sp_char,
   tab = "› ",
 }
 o.list = true

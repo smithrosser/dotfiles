@@ -1,0 +1,68 @@
+{
+  /*
+   Workbench theme
+  */
+  "workbench.colorTheme": "One Dark Pro",
+  "workbench.iconTheme": "quill-icons",
+  /*
+    Editor look & feel
+  */
+  "editor.fontSize": 13,
+  "editor.fontFamily": "Rec Mono Casual",
+  "editor.fontWeight": 400,
+  "editor.fontLigatures": "'dlig'",
+  "editor.renderWhitespace": "all",
+  "editor.bracketPairColorization.enabled": false,
+  "editor.cursorBlinking": "solid",
+  "editor.minimap.enabled": false,
+  /*
+   Terminal look & feel
+  */
+  "terminal.integrated.fontFamily": "Rec Mono Casual",
+  "terminal.integrated.fontSize": 12,
+  "terminal.integrated.fontWeight": 400,
+  "terminal.integrated.lineHeight": 1.4,
+  /*
+   Output panel look & feel
+  */
+  "[Log]": {
+    "editor.fontSize": 12,
+    "editor.fontFamily": "Rec Mono Casual",
+    "editor.fontWeight": 400,
+    "editor.lineHeight": 1.4
+  },
+  /*
+   Debug console look & feel
+  */
+  "debug.console.fontFamily": "Rec Mono Casual",
+  /*
+   Formatting behaviour
+  */
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[csharp]": {
+    "editor.defaultFormatter": "csharpier.csharpier-vscode"
+  },
+  /*
+   Vim settings
+  */
+  "vim.incsearch": true,
+  "vim.hlsearch": true,
+  "vim.leader": " ",
+  "vim.normalModeKeyBindings": [
+    {
+      // Enter command mode with ';'
+      "before": [";"],
+      "after": [":"]
+    },
+    {
+      // '<leader>x' to close
+      "before": ["leader", "x"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    }
+  ],
+  /*
+   Misc / set from UI
+  */
+  "debug.onTaskErrors": "abort"
+}

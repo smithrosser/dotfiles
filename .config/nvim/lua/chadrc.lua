@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-  theme = "ashes",
+  theme = "nightfox",
 
   hl_override = {
     Comment = { italic = true },
@@ -16,8 +16,7 @@ M.base46 = {
 
 M.ui = {
   statusline = {
-    theme = "default",
-    separator_style = "arrow",
+    theme = "vscode_colored",
   },
   nvdash = {
     load_on_startup = true,
