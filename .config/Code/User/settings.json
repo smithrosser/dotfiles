@@ -8,7 +8,7 @@
     Editor look & feel
   */
   "editor.fontSize": 13,
-  "editor.fontFamily": "Rec Mono Casual",
+  "editor.fontFamily": "monospace",
   "editor.fontWeight": 400,
   "editor.fontLigatures": "'dlig'",
   "editor.renderWhitespace": "all",
@@ -18,7 +18,7 @@
   /*
    Terminal look & feel
   */
-  "terminal.integrated.fontFamily": "Rec Mono Casual",
+  "terminal.integrated.fontFamily": "monospace",
   "terminal.integrated.fontSize": 12,
   "terminal.integrated.fontWeight": 400,
   "terminal.integrated.lineHeight": 1.4,
@@ -27,14 +27,14 @@
   */
   "[Log]": {
     "editor.fontSize": 12,
-    "editor.fontFamily": "Rec Mono Casual",
+    "editor.fontFamily": "monospace",
     "editor.fontWeight": 400,
     "editor.lineHeight": 1.4
   },
   /*
    Debug console look & feel
   */
-  "debug.console.fontFamily": "Rec Mono Casual",
+  "debug.console.fontFamily": "monospace",
   /*
    Formatting behaviour
   */
