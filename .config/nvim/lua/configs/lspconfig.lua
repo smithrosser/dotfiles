@@ -11,6 +11,8 @@ local servers = {
   "pyright",
   "protols",
   "glsl_analyzer",
+  "ts_ls",
+  "angularls",
 }
 
 -- lsps with default config

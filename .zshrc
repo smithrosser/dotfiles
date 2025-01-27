@@ -115,7 +115,7 @@ vivi() {
 
 # Edit .wezterm.lua (work PC only)
 viw() {
-  pushd /mnt/c/Users/SMT1YOK
+  pushd /mnt/c/Users/tdsr
   vi .wezterm.lua
   popd
 }
@@ -152,13 +152,12 @@ alias yi="yay -S"
 # Source .zshrc
 alias rl="echo \"Reloading...\"; source ~/.zshrc"
 
+set -a; source /etc/environment; set +a
+
+# Created by `pipx` on 2025-01-23 17:49:47
+export PATH="$PATH:/home/tom/.local/bin"
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# # Start tmux (experimental)
-# if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-#   exec tmux
-# fi
-
-set -a; source /etc/environment; set +a
