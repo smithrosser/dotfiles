@@ -4,8 +4,9 @@ local packages = {
   "stylua",
 
   -- Web dev
-  "html-lsp",
-  "css-lsp",
+  "emmet-language-server",
+  "typescript-language-server",
+  "angular-language-server",
   "prettier",
 
   -- C/C++

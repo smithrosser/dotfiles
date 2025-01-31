@@ -1,0 +1,10 @@
+# prevent committing random shit WSL puts here
+/*
+!.gitignore
+!Code
+!fontconfig
+!nvim
+!sway
+!tmux
+!tofi
+!waybar

@@ -3,58 +3,51 @@ local config = wezterm.config_builder()
 
 -- Some font presets
 local fonts = {
-	offlig = {
-		family = "Offlig",
-		harfbuzz_features = {},
-	},
-	fira = {
-		family = "Fira Code",
-		harfbuzz_features = {},
-	},
-	jetbrains = {
-		family = "JetBrains Mono",
+	intel_one_mono = {
+		family = "Intel One Mono",
 		harfbuzz_features = { "ss01" },
+		size = 13,
+		weight = 500,
 	},
-	cursive = {
-		family = "Cursive Mono",
-		harfbuzz_features = { "dlig", "ss08", "ss12" },
+	operator_mono = {
+		family = "Operator Mono Medium",
+		size = 13.5,
 	},
-	uncursive = {
-		family = "Uncursive Mono",
-		harfbuzz_features = { "dlig", "ss08", "ss12" },
+	fira_code = {
+		family = "Fira Code",
+		size = 13.5,
+		harfbuzz_features = { "cv14", "cv31" },
+		weight = 500,
 	},
 }
+local user_font = fonts.operator_mono
 
--- Default shell
-if wezterm.target_triple == "x86_64-pc-windows-msvc" then
-	config.default_prog = { "powershell", "-nologo" }
-end
-
--- Appearance
-config.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
-config.color_scheme = "Catppuccin Mocha"
-
--- Custom font settings from user table
-local user_font = fonts.cursive
-if user_font.weight == nil then
-	user_font.weight = 400
-end
-
--- Set WezTerm font
-config.font_size = 14
+config.font_size = (user_font.size == nil and 14) or user_font.size
 config.font = wezterm.font_with_fallback({
 	{
 		family = user_font.family,
-		weight = user_font.weight,
+		weight = (user_font.weight == nil and 400) or user_font.weight,
 		harfbuzz_features = user_font.harfbuzz_features,
 	},
-	{ family = "JetBrains Mono" },
+	{ family = "Operator Mono Bold" }, -- fix Operator Mono bold variant not showing
+	{ family = "Symbols Nerd Font Mono", scale = 0.8 },
+	{ family = "Noto Sans Symbols 2", scale = 0.9 },
+	{ family = "monospace" },
 })
+
+-- Appearance
+config.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
+config.color_scheme = "Tokyo Night (Gogh)"
 -- config.line_height = 1.25
 
 -- Behaviour
 config.enable_tab_bar = false
 config.enable_scroll_bar = false
 config.enable_kitty_graphics = true
+
+-- Open powershell over cmd on Windows
+if wezterm.target_triple == "x86_64-pc-windows-msvc" then
+	config.default_prog = { "powershell", "-nologo" }
+end
 
 return config

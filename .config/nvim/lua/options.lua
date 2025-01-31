@@ -25,3 +25,5 @@ o.backup = false
 o.hlsearch = false
 o.incsearch = true
 o.updatetime = 50
+
+o.cmdheight = 0

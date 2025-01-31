@@ -6,17 +6,18 @@
 local M = {}
 
 M.base46 = {
-  theme = "doomchad",
+  theme = "tokyonight",
 
   hl_override = {
-    Comment = { italic = true },
-    ["@comment"] = { italic = true },
+    Comment = { italic = false },
+    ["@comment"] = { italic = false },
   },
 }
 
 M.ui = {
   statusline = {
-    theme = "vscode_colored",
+    theme = "default",
+    separator_style = "block",
   },
   nvdash = {
     load_on_startup = true,

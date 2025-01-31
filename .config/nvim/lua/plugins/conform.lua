@@ -4,6 +4,7 @@ local options = {
     lua = { "stylua" },
 
     -- Web
+    scss = { "prettier" },
     css = { "prettier" },
     html = { "prettier" },
     javascript = { "prettier" },
