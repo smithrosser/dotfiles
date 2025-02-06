@@ -3,21 +3,9 @@ local config = wezterm.config_builder()
 
 -- Some font presets
 local fonts = {
-	intel_one_mono = {
-		family = "Intel One Mono",
-		harfbuzz_features = { "ss01" },
-		size = 13,
-		weight = 500,
-	},
-	operator_mono = {
-		family = "Operator Mono Medium",
-		size = 13.5,
-	},
-	fira_code = {
-		family = "Fira Code",
-		size = 13.5,
-		harfbuzz_features = { "cv14", "cv31" },
-		weight = 500,
+	monospace = {
+		family = "monospace",
+		size = 16,
 	},
 }
 local user_font = fonts.operator_mono

@@ -28,4 +28,4 @@ end, { desc = "Neogen: Generate documentation under cursor" })
 map({ "v", "n" }, "<leader>ga", require("actions-preview").code_actions)
 
 -- Remove NvTree focus keymap (encourage Telescope usage)
-nomap("n", "<leader>e")
+-- nomap("n", "<leader>e")

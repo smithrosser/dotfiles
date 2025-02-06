@@ -3,6 +3,7 @@ local parsers = {
   "vim",
   "vimdoc",
   "lua",
+  "markdown",
 
   -- Web dev
   "html",
