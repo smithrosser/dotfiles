@@ -8,7 +8,7 @@ local fonts = {
 		size = 16,
 	},
 }
-local user_font = fonts.operator_mono
+local user_font = fonts.monospace
 
 config.font_size = (user_font.size == nil and 14) or user_font.size
 config.font = wezterm.font_with_fallback({
