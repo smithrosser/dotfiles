@@ -4,10 +4,12 @@ local options = {
     lua = { "stylua" },
 
     -- Web
-    scss = { "prettier" },
     css = { "prettier" },
+    scss = { "prettier" },
     html = { "prettier" },
     javascript = { "prettier" },
+    typescript = { "prettier" },
+    angular = { "prettier" },
 
     -- Data languages
     json = { "prettier" },

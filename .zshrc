@@ -161,8 +161,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-if [ -z "$TMUX" ]
-then
-    tmux attach -t wsl || tmux new -s wsl
-fi
+# Load Angular CLI autocompletion.
+source <(ng completion script)
 
+export TGIM_API_PORT=3000
+export TGIM_OMDB_API_KEY="94a23b1d"
