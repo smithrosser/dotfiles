@@ -25,4 +25,7 @@ palette = 14=#7dcfff
 palette = 15=#c0caf5
 
 font-size = 15
-font-family = monospace
+font-family = Offlig
+shell-integration-features = no-cursor
+cursor-style = block
+cursor-style-blink = false

@@ -152,6 +152,9 @@ alias yi="yay -S"
 # Source .zshrc
 alias rl="echo \"Reloading...\"; source ~/.zshrc"
 
+# Launch TGIM dev session in tmux
+alias tgim="~/dotfiles/.config/tmux/tgim.sh"
+
 set -a; source /etc/environment; set +a
 
 # Created by `pipx` on 2025-01-23 17:49:47
@@ -164,5 +167,5 @@ export NVM_DIR="$HOME/.nvm"
 # Load Angular CLI autocompletion.
 source <(ng completion script)
 
-export TGIM_API_PORT=3000
+export TGIM_API_PORT=3030
 export TGIM_OMDB_API_KEY="94a23b1d"
