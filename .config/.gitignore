@@ -1,7 +1,7 @@
 # prevent committing random shit WSL puts here
 /*
 !.gitignore
-!Code
+!Code/User/settings.json
 !fontconfig
 !nvim
 !sway

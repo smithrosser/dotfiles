@@ -1,5 +1,4 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# If you come from bash you might have to change your $PATH. export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -157,6 +156,9 @@ alias tgim="~/dotfiles/.config/tmux/tgim.sh"
 
 set -a; source /etc/environment; set +a
 
+# Source environment variables for TGIM
+source ~/.config/tgim/tgim.sh
+
 # Created by `pipx` on 2025-01-23 17:49:47
 export PATH="$PATH:/home/tom/.local/bin"
 
@@ -167,5 +169,3 @@ export NVM_DIR="$HOME/.nvm"
 # Load Angular CLI autocompletion.
 source <(ng completion script)
 
-export TGIM_API_PORT=3030
-export TGIM_OMDB_API_KEY="94a23b1d"

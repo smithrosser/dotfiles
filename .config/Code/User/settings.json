@@ -2,15 +2,15 @@
   /*
    Workbench theme
   */
-  "workbench.colorTheme": "One Dark Pro",
+  "workbench.colorTheme": "Tokyo Night",
   "workbench.iconTheme": "quill-icons",
   /*
     Editor look & feel
   */
-  "editor.fontSize": 13,
-  "editor.fontFamily": "monospace",
-  "editor.fontWeight": 400,
-  "editor.fontLigatures": "'dlig'",
+  "editor.fontSize": 14,
+  "editor.fontFamily": "Comic Code Ligatures",
+  "editor.fontWeight": 500,
+  "editor.fontLigatures": false,
   "editor.renderWhitespace": "all",
   "editor.bracketPairColorization.enabled": false,
   "editor.cursorBlinking": "solid",
@@ -64,5 +64,19 @@
   /*
    Misc / set from UI
   */
-  "debug.onTaskErrors": "abort"
+  "debug.onTaskErrors": "abort",
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb, bun.lock",
+    "*.sqlite": "${capture}.${extname}-*",
+    "*.db": "${capture}.${extname}-*",
+    "*.sqlite3": "${capture}.${extname}-*",
+    "*.db3": "${capture}.${extname}-*",
+    "*.sdb": "${capture}.${extname}-*",
+    "*.s3db": "${capture}.${extname}-*"
+  }
 }
