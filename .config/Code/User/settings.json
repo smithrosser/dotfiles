@@ -7,10 +7,10 @@
   /*
     Editor look & feel
   */
-  "editor.fontSize": 14,
-  "editor.fontFamily": "Comic Code Ligatures",
+  "editor.fontSize": 18,
+  "editor.fontFamily": "Iosevka Nerd Font",
   "editor.fontWeight": 500,
-  "editor.fontLigatures": false,
+  "editor.fontLigatures": "'dlig', 'ss07'",
   "editor.renderWhitespace": "all",
   "editor.bracketPairColorization.enabled": false,
   "editor.cursorBlinking": "solid",
@@ -18,7 +18,7 @@
   /*
    Terminal look & feel
   */
-  "terminal.integrated.fontFamily": "monospace",
+  "terminal.integrated.fontFamily": "Iosevka Nerd Font",
   "terminal.integrated.fontSize": 12,
   "terminal.integrated.fontWeight": 400,
   "terminal.integrated.lineHeight": 1.4,
@@ -27,14 +27,14 @@
   */
   "[Log]": {
     "editor.fontSize": 12,
-    "editor.fontFamily": "monospace",
+    "editor.fontFamily": "Iosevka Nerd Font",
     "editor.fontWeight": 400,
     "editor.lineHeight": 1.4
   },
   /*
    Debug console look & feel
   */
-  "debug.console.fontFamily": "monospace",
+  "debug.console.fontFamily": "Iosevka Nerd Font",
   /*
    Formatting behaviour
   */

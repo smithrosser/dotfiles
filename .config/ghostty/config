@@ -24,9 +24,12 @@ palette = 13=#bb9af7
 palette = 14=#7dcfff
 palette = 15=#c0caf5
 
-font-size = 15
-font-family = Comic Code Ligatures
-font-feature = -liga
+font-size = 14
+font-family = FiraCode Nerd Font
+font-style = Medium
+font-style-italic = Medium Italic
+
+font-feature = "'cv14','cv31','ss02'"
 shell-integration-features = no-cursor
 cursor-style = block
 cursor-style-blink = false
