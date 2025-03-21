@@ -24,12 +24,16 @@ palette = 13=#bb9af7
 palette = 14=#7dcfff
 palette = 15=#c0caf5
 
-font-size = 14
+font-size = 15
 font-family = FiraCode Nerd Font
 font-style = Medium
-font-style-italic = Medium Italic
+font-style-bold = Bold
+font-feature = "'cv02','cv14','cv31','ss03'"
+# font-feature = "'cv02','cv04','cv05','cv15','cv16','cv17'"
 
-font-feature = "'cv14','cv31','ss02'"
 shell-integration-features = no-cursor
 cursor-style = block
 cursor-style-blink = false
+
+# adjust-cell-width = -1
+adjust-cell-height = -1

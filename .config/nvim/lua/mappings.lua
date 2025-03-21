@@ -1,31 +1,24 @@
-require "nvchad.mappings"
+vim.g.mapleader = ' ' -- must be first!
+vim.g.maplocalleader = ' '
 
--- add yours here
+vim.keymap.set('n', ';', ':', { desc = 'Enter command mode' })
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>') -- clear search highlights on <Esc>
 
-local map = vim.keymap.set
-local nomap = vim.keymap.del
+vim.keymap.set('n', '<leader>;', function()
+  return require('toggleterm.terminal').Terminal:new({ direction = 'float' }):toggle()
+end, { desc = 'Toggle floating terminal' })
 
-map("n", ";", ":", { desc = "CMD enter command mode" })
-map("i", "jk", "<ESC>")
-map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
+vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
--- Floating terminal
-map({ "n", "t" }, "<leader>;", function()
-  require("nvchad.term").toggle { pos = "float", id = "term" }
-end)
-
--- Fuzzy finder
-map("n", "<leader>ff", require("telescope.builtin").git_files, { desc = "Telescope: search Git files" })
-map("n", "<leader>fp", require("telescope.builtin").find_files, { desc = "Telescope: search all files" })
-map("n", "<leader>fd", require("telescope.builtin").live_grep, { desc = "Telescope: live grep" })
-
--- Generate documentation
-map("n", "<leader>gf", function()
-  require("neogen").generate()
-end, { desc = "Neogen: Generate documentation under cursor" })
-
--- Preview code actions
-map({ "v", "n" }, "<leader>ga", require("actions-preview").code_actions)
-
--- Remove NvTree focus keymap (encourage Telescope usage)
--- nomap("n", "<leader>e")
+-- autocmd for highlighting copied text
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight when yanking (copying) text',
+  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})

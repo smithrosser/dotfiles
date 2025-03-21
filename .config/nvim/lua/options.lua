@@ -1,29 +1,30 @@
-require "nvchad.options"
+vim.opt.number = true
+vim.opt.mouse = 'a'
+vim.opt.showmode = false
 
-local o = vim.opt
+-- sync neovim & os clipboards
+vim.schedule(function()
+  vim.opt.clipboard = 'unnamedplus'
+end)
 
-o.cursorlineopt = "both"
-o.number = true
-o.relativenumber = true
+vim.opt.breakindent = true -- indent wrapped lines
+vim.opt.undofile = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.signcolumn = 'yes'
+vim.opt.updatetime = 250
+vim.opt.timeoutlen = 300 -- timeout for keymaps
+vim.opt.laststatus = 3 -- global statusline
 
--- Whitespace rendering
-local sp_char = "·"
-o.listchars = {
-  space = sp_char,
-  trail = sp_char,
-  tab = "› ",
-}
-o.list = true
+-- handling new splits
+vim.opt.splitright = true
+vim.opt.splitbelow = true
 
--- General buffer options
-o.wrap = false
-o.scrolloff = 8
+-- whitespace rendering
+vim.opt.list = true
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
--- Misc behaviour
-o.swapfile = false
-o.backup = false
-o.hlsearch = false
-o.incsearch = true
-o.updatetime = 50
-
-o.cmdheight = 0
+vim.opt.inccommand = 'split' -- live preview of substitutions
+vim.opt.cursorline = true
+vim.opt.scrolloff = 10
+vim.opt.confirm = true

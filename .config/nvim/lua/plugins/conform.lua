@@ -1,38 +1,32 @@
-local options = {
-  formatters_by_ft = {
-    -- Configs
-    lua = { "stylua" },
-
-    -- Web
-    css = { "prettier" },
-    scss = { "prettier" },
-    html = { "prettier" },
-    javascript = { "prettier" },
-    typescript = { "prettier" },
-    angular = { "prettier" },
-
-    -- Data languages
-    json = { "prettier" },
-    yaml = { "prettier" },
-    toml = { "prettier" },
-
-    -- Programming
-    c = { "clang-format" },
-    cpp = { "clang-format" },
-    python = { "autopep8" },
-
-    -- Graphics
-    glsl = { "glsl_analyzer" },
-  },
-
-  format_on_save = {
-    timeout_ms = 500,
-    lsp_fallback = true,
-  },
-}
-
 return {
-  "stevearc/conform.nvim",
-  event = "BufWritePre", -- enable format on save
-  opts = options,
+  'stevearc/conform.nvim',
+  event = { 'BufWritePre' },
+  cmd = { 'ConformInfo' },
+  keys = {
+    {
+      '<leader>f',
+      function()
+        require('conform').format { async = true, lsp_format = 'fallback' }
+      end,
+      mode = '',
+      desc = '[F]ormat buffer',
+    },
+  },
+  opts = {
+    notify_on_error = false,
+    format_on_save = function()
+      return {
+        timeout_ms = 250,
+        lsp_format = 'fallback',
+      }
+    end,
+    formatters_by_ft = {
+      lua = { 'stylua' },
+      c = { 'clang-format' },
+      cpp = { 'clang-format' },
+      python = { 'isort', 'black' },
+      javascript = { 'prettierd' },
+      rust = { 'rustfmt' },
+    },
+  },
 }

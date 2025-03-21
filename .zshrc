@@ -7,7 +7,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="alanpeabody"
+ZSH_THEME="minimal_improved"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -144,28 +144,19 @@ alias cb="cmake --build"
 alias cm="cmake"
 alias ct="ctest --output-on-failure"
 
-# Arch (btw) package wrangling
-alias pi="sudo pacman -S"
-alias yi="yay -S"
-
 # Source .zshrc
 alias rl="echo \"Reloading...\"; source ~/.zshrc"
 
 # Launch TGIM dev session in tmux
+source ~/.config/tgim/tgim.sh
 alias tgim="~/dotfiles/.config/tmux/tgim.sh"
 
 set -a; source /etc/environment; set +a
 
 # Source environment variables for TGIM
-source ~/.config/tgim/tgim.sh
-
-# Created by `pipx` on 2025-01-23 17:49:47
 export PATH="$PATH:/home/tom/.local/bin"
+source ~/.cargo/env
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# Load Angular CLI autocompletion.
-source <(ng completion script)
-
