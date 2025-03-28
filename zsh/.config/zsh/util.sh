@@ -1,4 +1,4 @@
-# various useful functions and aliases
+# Various useful functions and aliases
 
 # Suppress pushd/popd output
 pushd() {
