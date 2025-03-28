@@ -1,5 +1,5 @@
 local wezterm = require 'wezterm'
-local font_name = 'FiraMono Nerd Font'
+local font_name = 'FiraCode Nerd Font'
 
 return {
   color_scheme = 'Tokyo Night Storm',

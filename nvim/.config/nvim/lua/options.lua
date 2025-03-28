@@ -18,6 +18,10 @@ vim.opt.timeoutlen = 300 -- timeout for keymaps
 vim.opt.laststatus = 3 -- global statusline
 vim.opt.cmdheight = 0 -- hide cmdline
 
+-- default tab width (when sleuth fails)
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+
 -- handling new splits
 vim.opt.splitright = true
 vim.opt.splitbelow = true

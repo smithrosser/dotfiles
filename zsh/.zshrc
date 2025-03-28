@@ -107,15 +107,8 @@ alias vi="nvim"
 
 # Edit dotfiles
 vivi() {
-  pushd ~/ws/dotfiles
+  pushd ~/dotfiles
   vi
-  popd
-}
-
-# Edit .wezterm.lua (work PC only)
-viw() {
-  pushd /mnt/c/Users/tdsr
-  vi .wezterm.lua
   popd
 }
 
@@ -150,6 +143,3 @@ alias rl="echo \"Reloading...\"; source ~/.zshrc"
 # Path variables
 set -a; source /etc/environment; set +a
 export PATH="$PATH:/home/tom/.local/bin"
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

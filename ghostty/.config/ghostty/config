@@ -5,8 +5,8 @@ gtk-titlebar = false
 window-padding-x = 20
 window-padding-y = 20
 
-font-size = 16
-font-family = FiraMono Nerd Font
+font-size = 15
+font-family = FiraCode Nerd Font
 font-style = Regular
 font-style-bold = Bold
 font-style-italic = Regular

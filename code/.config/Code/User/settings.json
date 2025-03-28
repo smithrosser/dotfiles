@@ -1,0 +1,42 @@
+{
+  //
+  // Editor appearance
+  //
+  "workbench.colorTheme": "Rosé Pine Moon (no italics)",
+  "workbench.productIconTheme": "fluent-icons",
+  "workbench.iconTheme": "quill-icons",
+  "editor.fontSize": 16,
+  "editor.fontWeight": 450,
+  "editor.fontLigatures": true,
+  "editor.minimap.enabled": false,
+  "editor.cursorBlinking": "phase",
+  "editor.bracketPairColorization.enabled": false,
+
+  //
+  // Fonts
+  //
+  "editor.fontFamily": "FiraCode Nerd Font",
+  "terminal.integrated.fontFamily": "FiraCode Nerd Font",
+  "debug.console.fontFamily": "FiraCode Nerd Font",
+  "[Log][log]": { "editor.fontFamily": "FiraCode Nerd Font" },
+
+  //
+  // Behaviour
+  //
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  //
+  // Vim settings/binds
+  //
+  "vim.incsearch": true,
+  "vim.hlsearch": true,
+  "vim.leader": " ",
+  "vim.normalModeKeyBindings": [
+    { "before": [";"], "after": [":"] },
+    { "before": ["leader", "/"], "commands": ["editor.action.commentLine"] }
+  ],
+  "vim.visualModeKeyBindings": [
+    { "before": ["leader", "/"], "commands": ["editor.action.commentLine"] }
+  ]
+}
