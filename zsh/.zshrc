@@ -24,7 +24,7 @@ ZSH_THEME="robbyrussell"
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
+zstyle ':omz:update' mode auto        # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
@@ -75,11 +75,6 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
@@ -93,52 +88,7 @@ source $ZSH/oh-my-zsh.sh
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
-
-# Suppress pushd/popd output
-pushd() {
-  builtin pushd "$@" > /dev/null;
-}
-popd() {
-  builtin popd > /dev/null;
-}
-
-# Neovim alias
-alias vi="nvim"
-
-# Edit dotfiles
-vivi() {
-  pushd ~/dotfiles
-  vi
-  popd
-}
-
-# Quick access to workspace folders
-ws () {
-  cd ~/ws/$1/$2
-}
-
-# Always show hidden files with ls
-alias ls="ls -ah --color=auto"
-alias ll="ls -al --color=auto"
-
-# Suppress 'clear' command so I can scroll up still
-alias clear="echo \"did you mean '^L?'\""
-
-# Quick git wrangling
-alias gs="git status"
-alias ga="git add -A"
-alias gc="git commit -m"
-alias gp="git push"
-alias gb="git checkout"
-alias gn="git checkout -B"
-
-# CMake stuff
-alias cb="cmake --build"
-alias cm="cmake"
-alias ct="ctest --output-on-failure"
-
-# Reload .zshrc
-alias rl="echo \"Reloading...\"; source ~/.zshrc"
+source ~/.config/zsh/util.sh
 
 # Path variables
 set -a; source /etc/environment; set +a
