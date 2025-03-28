@@ -7,7 +7,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="minimal_improved"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -107,7 +107,7 @@ alias vi="nvim"
 
 # Edit dotfiles
 vivi() {
-  pushd ~/dotfiles
+  pushd ~/ws/dotfiles
   vi
   popd
 }
@@ -144,19 +144,12 @@ alias cb="cmake --build"
 alias cm="cmake"
 alias ct="ctest --output-on-failure"
 
-# Source .zshrc
+# Reload .zshrc
 alias rl="echo \"Reloading...\"; source ~/.zshrc"
 
-# Launch TGIM dev session in tmux
-source ~/.config/tgim/tgim.sh
-alias tgim="~/dotfiles/.config/tmux/tgim.sh"
-
+# Path variables
 set -a; source /etc/environment; set +a
-
-# Source environment variables for TGIM
 export PATH="$PATH:/home/tom/.local/bin"
-source ~/.cargo/env
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

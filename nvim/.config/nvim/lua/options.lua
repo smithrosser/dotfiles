@@ -7,7 +7,8 @@ vim.schedule(function()
   vim.opt.clipboard = 'unnamedplus'
 end)
 
-vim.opt.breakindent = true -- indent wrapped lines
+vim.opt.wrap = false
+vim.opt.breakindent = true -- indent wrapped lines (wrap disabled atm)
 vim.opt.undofile = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
@@ -15,6 +16,7 @@ vim.opt.signcolumn = 'yes'
 vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300 -- timeout for keymaps
 vim.opt.laststatus = 3 -- global statusline
+vim.opt.cmdheight = 0 -- hide cmdline
 
 -- handling new splits
 vim.opt.splitright = true

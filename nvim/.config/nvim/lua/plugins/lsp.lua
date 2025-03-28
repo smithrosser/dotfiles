@@ -82,7 +82,7 @@ return {
         },
       },
       virtual_text = {
-        source = 'if_many',
+        source = false,
         spacing = 2,
         format = function(diagnostic)
           local diagnostic_message = {
@@ -102,14 +102,15 @@ return {
 
     -- enable language servers
     local servers = {
-      clangd = {},
-      gopls = {},
-      pyright = {},
+      clangd = {
+        capabilities = capabilities,
+        cmd = { 'clangd', '--background-index', '--clang-tidy' },
+      },
+      cmake = {},
       rust_analyzer = {},
+      pyright = {},
+      ts_ls = {},
       lua_ls = {
-        -- cmd = { ... },
-        -- filetypes = { ... },
-        -- capabilities = {},
         settings = {
           Lua = {
             completion = {

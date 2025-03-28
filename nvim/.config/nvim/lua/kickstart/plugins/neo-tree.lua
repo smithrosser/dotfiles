@@ -14,7 +14,18 @@ return {
     { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
   },
   opts = {
+    sources = {
+      'filesystem',
+      'git_status',
+      'document_symbols',
+    },
+    source_selector = {
+      winbar = true,
+    },
     filesystem = {
+      filtered_items = {
+        hide_dotfiles = false,
+      },
       window = {
         mappings = {
           ['\\'] = 'close_window',
