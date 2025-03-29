@@ -10,8 +10,9 @@ vim.keymap.set('n', '<leader>;', function()
   return require('toggleterm.terminal').Terminal:new({ direction = 'float' }):toggle()
 end, { desc = 'Toggle floating terminal' })
 
-vim.keymap.set('n', '<leader>/', 'gcc', { desc = 'toggle comment (line)', remap = true })
-vim.keymap.set('v', '<leader>/', 'gc', { desc = 'toggle comment (selection)', remap = true })
+vim.keymap.set('n', '<leader>/', 'gcc', { desc = 'Toggle comment (line)', remap = true })
+vim.keymap.set('v', '<leader>/', 'gc', { desc = 'Toggle comment (selection)', remap = true })
+vim.keymap.set('n', '<leader>lz', ':Lazy<CR>', { desc = 'Open [l]a[z]y' })
 
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
