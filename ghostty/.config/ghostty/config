@@ -12,7 +12,6 @@ font-style-bold = Bold
 font-style-italic = Regular
 font-style-bold-italic = Bold
 
-# split navigation
 adjust-cell-width = -1
 adjust-cell-height = -1
 
