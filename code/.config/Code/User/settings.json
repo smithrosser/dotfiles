@@ -2,23 +2,22 @@
   //
   // Editor appearance
   //
-  "workbench.colorTheme": "Rosé Pine Moon (no italics)",
-  "workbench.productIconTheme": "fluent-icons",
+  "workbench.colorTheme": "Rosé Pine Dawn",
   "workbench.iconTheme": "quill-icons",
   "editor.fontSize": 16,
-  "editor.fontWeight": 450,
+  "editor.fontWeight": 400,
   "editor.fontLigatures": true,
   "editor.minimap.enabled": false,
-  "editor.cursorBlinking": "phase",
+  "editor.cursorBlinking": "solid",
   "editor.bracketPairColorization.enabled": false,
 
   //
   // Fonts
   //
-  "editor.fontFamily": "FiraCode Nerd Font",
-  "terminal.integrated.fontFamily": "FiraCode Nerd Font",
-  "debug.console.fontFamily": "FiraCode Nerd Font",
-  "[Log][log]": { "editor.fontFamily": "FiraCode Nerd Font" },
+  "editor.fontFamily": "Rec Mono Casual",
+  "terminal.integrated.fontFamily": "Rec Mono Casual",
+  "debug.console.fontFamily": "Rec Mono Casual",
+  "[Log][log]": { "editor.fontFamily": "Rec Mono Casual" },
 
   //
   // Behaviour
@@ -34,9 +33,20 @@
   "vim.leader": " ",
   "vim.normalModeKeyBindings": [
     { "before": [";"], "after": [":"] },
-    { "before": ["leader", "/"], "commands": ["editor.action.commentLine"] }
+    { "before": ["leader", "/"], "commands": ["editor.action.commentLine"] },
+    { "before": ["\\"], "commands": ["workbench.view.explorer"] }
   ],
   "vim.visualModeKeyBindings": [
     { "before": ["leader", "/"], "commands": ["editor.action.commentLine"] }
-  ]
+  ],
+
+  // Proxy settings (work)
+  "http.proxy": "http://rb-proxy-de.bosch.com:8080",
+  "http.proxyStrictSSL": false,
+  "http.proxyAuthorization": null,
+  "http.proxySupport": "override",
+
+  // Misc settings
+  "extensions.ignoreRecommendations": true,
+  "extensions.autoUpdate": true
 }

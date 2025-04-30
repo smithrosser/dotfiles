@@ -1,12 +1,42 @@
 [
+  //
+  // Settings, keybindings
+  //
+  {
+    "key": "ctrl+shift+,",
+    "command": "workbench.action.openSettingsJson"
+  },
+  {
+    "key": "ctrl+shift+alt+,",
+    "command": "workbench.action.openGlobalKeybindingsFile"
+  },
+  //
+  // Code completion
+  //
+  {
+    "key": "tab",
+    "command": "-acceptSelectedSuggestion",
+    "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
+  },
   {
     "key": "tab",
     "command": "selectNextSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus && !inSnippetMode"
   },
   {
     "key": "shift+tab",
     "command": "selectPrevSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus && !inSnippetMode"
+  },
+  //
+  // Workbench navigation
+  //
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.focusSideBar"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.focusActiveEditorGroup"
   }
 ]
