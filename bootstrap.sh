@@ -91,5 +91,10 @@ stow nvim ghostty zsh
 stow --no-folding code fontconfig
 popd
 
+echo "Configuring git..."
+git config --global user.name "Tom Smithrosser"
+git config --global user.email "tom@toaster"
+git config --global credential.helper store
+
 echo "Done!"
 
