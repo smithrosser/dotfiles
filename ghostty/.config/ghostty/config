@@ -1,12 +1,15 @@
 theme = light:rose-pine-dawn,dark:rose-pine-moon
 
 gtk-titlebar = false
+maximize = true
 
-window-padding-x = 20
-window-padding-y = 20
+window-padding-x = 10
+window-padding-y = 10
+
+unfocused-split-opacity = 0.3
 
 font-size = 15
-font-family = FiraCode Nerd Font
+font-family = Offlig D
 font-style = Regular
 font-style-bold = Bold
 font-style-italic = Regular
@@ -22,4 +25,5 @@ keybind = ctrl+shift+h=goto_split:left
 keybind = ctrl+shift+j=goto_split:down
 keybind = ctrl+shift+k=goto_split:up
 keybind = ctrl+shift+l=goto_split:right
+
 
