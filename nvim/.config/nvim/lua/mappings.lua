@@ -6,7 +6,7 @@ vim.keymap.set('n', '<leader>x', ':q<CR>', { desc = 'Move focus to the upper win
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>') -- clear search highlights on <Esc>
 vim.keymap.set('n', '<leader>ld', vim.diagnostic.open_float, { desc = 'LSP: [l]ist [d]iagnostics' })
 
-vim.keymap.set('n', '<leader>;', function()
+vim.keymap.set('n', '<C-;>', function()
   return require('toggleterm.terminal').Terminal:new({ direction = 'float' }):toggle()
 end, { desc = 'Toggle floating terminal' })
 
