@@ -9,8 +9,8 @@ window-padding-y = 10
 unfocused-split-opacity = 0.3
 
 font-size = 15
-font-family = Offlig D
-font-style = Regular
+font-family = FiraCode Nerd Font
+font-style = Retina
 font-style-bold = Bold
 font-style-italic = Regular
 font-style-bold-italic = Bold
@@ -25,5 +25,4 @@ keybind = ctrl+shift+h=goto_split:left
 keybind = ctrl+shift+j=goto_split:down
 keybind = ctrl+shift+k=goto_split:up
 keybind = ctrl+shift+l=goto_split:right
-
 
