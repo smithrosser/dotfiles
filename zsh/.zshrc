@@ -90,9 +90,16 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 source ~/.config/zsh/util.sh
 
-# Path variables
+# Some additional PATH entries
+
+# Rust
 . ~/.cargo/env
-export PATH="$PATH:/home/tom/.local/bin"
+
+# Node
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Misc
+PATH_ADDITIONS="/home/tom/.local/bin:/usr/local/go/bin:/home/tom/.dotnet/tools"
+export PATH="$PATH:${PATH_ADDITIONS}"

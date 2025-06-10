@@ -12,11 +12,13 @@ return {
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
       callback = function(event)
-        -- mapping helper function
+        -- Helper function for creating keymaps
         local map = function(keys, func, desc, mode)
           mode = mode or 'n'
           vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
         end
+
+        -- Set helpful keymaps
         map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
         map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
         map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
@@ -61,7 +63,7 @@ return {
           })
         end
 
-        -- enable inlay hints
+        -- Enable inlay hints (if supported)
         if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
           map('<leader>th', function()
             vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
@@ -98,20 +100,23 @@ return {
       },
     }
 
-    -- broadcast neovim (+ plugins) capabilities to language servers
+    -- Set default capabilities for majority of language servers
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
-    -- enable language servers
+    -- List LSPs to install (configure if necessary):
+    -- installation is handled by `mason-lspconfig`
     local servers = {
+      -- Build systems
+      cmake = {},
       clangd = {
         capabilities = capabilities,
         cmd = { 'clangd', '--background-index', '--clang-tidy' },
       },
-      cmake = {},
+      gopls = {},
       rust_analyzer = {},
-      pyright = {},
       ts_ls = {},
+      pyright = {},
       lua_ls = {
         settings = {
           Lua = {
@@ -122,8 +127,14 @@ return {
           },
         },
       },
+
+      -- Web
+      emmet_language_server = {},
+      tailwindcss = {},
     }
     local ensure_installed = vim.tbl_keys(servers or {})
+
+    -- Extend list of LSPs with additional packages (formatters, etc.), then install
     vim.list_extend(ensure_installed, {
       'stylua',
       'clang-format',
