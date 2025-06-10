@@ -11,10 +11,10 @@ return {
   require 'plugins.indent_line',
   require 'plugins.lazydev',
   require 'plugins.mini',
+  require 'plugins.neogen',
   require 'plugins.sleuth',
   require 'plugins.telescope',
   require 'plugins.todo',
   require 'plugins.toggleterm',
   require 'plugins.which-key',
 }
-

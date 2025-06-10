@@ -8,15 +8,15 @@ window-padding-y = 10
 
 unfocused-split-opacity = 0.3
 
-font-size = 15
+font-size = 13
 font-family = FiraCode Nerd Font
-font-style = Retina
+font-style = Medium
 font-style-bold = Bold
-font-style-italic = Regular
+font-style-italic = Medium
 font-style-bold-italic = Bold
 
-adjust-cell-width = -1
-adjust-cell-height = -1
+# adjust-cell-width = -1
+# adjust-cell-height = -1
 
 # split navigation
 keybind = ctrl+shift+up=new_split:down
