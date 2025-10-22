@@ -17,4 +17,5 @@ return {
   require 'plugins.todo',
   require 'plugins.toggleterm',
   require 'plugins.which-key',
+  require 'plugins.leetcode',
 }
