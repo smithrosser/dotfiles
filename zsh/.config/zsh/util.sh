@@ -10,6 +10,7 @@ popd() {
 
 # Neovim alias
 alias vi="nvim"
+alias vilc="nvim leetcode.nvim"
 
 # Edit dotfiles
 vivi() {
