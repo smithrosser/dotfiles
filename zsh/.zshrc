@@ -93,7 +93,7 @@ source ~/.config/zsh/util.sh
 # Some additional PATH entries
 
 # Rust
-. ~/.cargo/env
+# . ~/.cargo/env
 
 # Node
 export NVM_DIR="$HOME/.nvm"
