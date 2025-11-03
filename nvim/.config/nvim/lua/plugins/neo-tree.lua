@@ -16,8 +16,8 @@ return {
   opts = {
     sources = {
       'filesystem',
-      'git_status',
-      'document_symbols',
+      -- 'git_status',
+      -- 'document_symbols',
     },
     source_selector = {
       winbar = true,

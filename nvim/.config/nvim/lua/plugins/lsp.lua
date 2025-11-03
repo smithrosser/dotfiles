@@ -107,7 +107,6 @@ return {
     -- List LSPs to install (configure if necessary):
     -- installation is handled by `mason-lspconfig`
     local servers = {
-      -- Build systems
       cmake = {},
       clangd = {
         capabilities = capabilities,
@@ -140,6 +139,7 @@ return {
       'clang-format',
       'black',
       'prettierd',
+      'xmlformatter',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
     require('mason-lspconfig').setup {

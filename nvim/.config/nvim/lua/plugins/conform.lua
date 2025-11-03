@@ -33,6 +33,7 @@ return {
       json = { 'prettierd' },
       yaml = { 'prettierd' },
       toml = { 'prettierd' },
+      xml = { 'xmlformatter' },
     },
   },
 }

@@ -1,10 +1,10 @@
-theme = light:Rose Pine Dawn,dark:Rose Pine Moon
+theme = light:everforest-light-soft,dark:everforest-dark-soft
 
 gtk-titlebar = false
 maximize = true
 
-window-padding-x = 10
-window-padding-y = 10
+window-padding-x = 5
+window-padding-y = 5
 
 unfocused-split-opacity = 0.3
 
@@ -12,12 +12,12 @@ font-size = 12
 font-family = IntoneMono Nerd Font
 font-style = Medium
 font-style-bold = Bold
-font-style-italic = Medium
-font-style-bold-italic = Bold
+font-style-italic = Medium Italic
+font-style-bold-italic = Bold Italic
 font-feature = ss01
 
-adjust-cell-width = -1
-# adjust-cell-height = -1
+# adjust-cell-width = -1
+adjust-cell-height = -1
 
 # split navigation
 keybind = ctrl+shift+up=new_split:down
