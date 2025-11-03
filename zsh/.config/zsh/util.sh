@@ -1,5 +1,7 @@
 # Various useful functions and aliases
 
+alias please="sudo"
+
 # Suppress pushd/popd output
 pushd() {
   builtin pushd "$@" > /dev/null;
