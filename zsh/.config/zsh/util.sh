@@ -26,7 +26,7 @@ ws () {
   cd ~/ws/$1/$2
 }
 
-# Go to workspace folder and start Neovim
+# Go to folder inside 'ws' and start Neovim
 v() {
 	pushd ~/ws/$1/$2
 	vi
