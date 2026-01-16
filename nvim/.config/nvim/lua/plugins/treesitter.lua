@@ -1,14 +1,30 @@
+local parsers = {
+	"c",
+	"cpp",
+	"cmake",
+	"lua",
+	"python",
+	"typescript",
+	"javascript",
+	"vimdoc",
+	"json",
+	"toml",
+	"yaml",
+	"xml",
+	"brightscript",
+}
+
 return {
-  'nvim-treesitter/nvim-treesitter',
-  build = ':TSUpdate',
-  main = 'nvim-treesitter.configs', -- Sets main module to use for opts
-  opts = {
-    ensure_installed = { 'bash', 'c', 'cpp', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
-    auto_install = true,
-    highlight = {
-      enable = true,
-      additional_vim_regex_highlighting = { 'ruby' },
-    },
-    indent = { enable = true, disable = { 'ruby' } },
-  },
+	"nvim-treesitter/nvim-treesitter",
+	lazy = false,
+	tag = "v0.10.0",
+	build = ":TSUpdate",
+	config = function()
+		require("nvim-treesitter.configs").setup({
+			ensure_installed = parsers,
+			auto_install = true,
+			indent = { enable = true },
+			highlight = { enable = true },
+		})
+	end,
 }
