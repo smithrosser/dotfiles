@@ -26,6 +26,13 @@ ws () {
   cd ~/ws/$1/$2
 }
 
+# Go to workspace folder and start Neovim
+v() {
+	pushd ~/ws/$1/$2
+	vi
+	popd
+}
+
 # File system
 alias ls='eza -lh --group-directories-first --icons=auto'
 alias lsa='ls -a'
@@ -67,7 +74,14 @@ alias cm="cmake"
 alias ct="ctest --output-on-failure"
 
 # Reload .zshrc
-rl () {
+rl() {
   echo "Reloading..."
   source ~/.zshrc
 }
+
+# Roku helpers
+rip() {
+	export ROKU_DEV_TARGET=$1
+	echo "Set ROKU_DEV_TARGET to '$1'"
+}
+export DEVPASSWORD=tastycheese
