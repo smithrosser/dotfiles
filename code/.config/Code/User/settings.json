@@ -2,27 +2,28 @@
   //
   // Editor appearance
   //
-  "workbench.colorTheme": "Rosé Pine Dawn (no italics)",
-  "editor.fontWeight": 500,
+  "window.autoDetectColorScheme": true,
+  "workbench.preferredDarkColorTheme": "Tokyo Night Storm",
+  "workbench.preferredLightColorTheme": "Tokyo Night Light",
+  "editor.fontWeight": 450,
   "editor.fontLigatures": true,
   "editor.minimap.enabled": false,
   "editor.cursorBlinking": "solid",
   "editor.bracketPairColorization.enabled": false,
   "editor.renderWhitespace": "trailing",
   "editor.codeLensFontSize": 10,
-  "editor.lineHeight": 1.2,
 
   //
   // Fonts
   //
-  "editor.fontFamily": "FiraCode Nerd Font",
-  "terminal.integrated.fontFamily": "FiraCode Nerd Font",
-  "debug.console.fontFamily": "FiraCode Nerd Font",
+  "editor.fontFamily": "IntoneMono Nerd Font",
+  "terminal.integrated.fontFamily": "IntoneMono Nerd Font",
+  "debug.console.fontFamily": "IntoneMono Nerd Font",
   "[Log][log]": {
-    "editor.fontFamily": "FiraCode Nerd Font",
+    "editor.fontFamily": "IntoneMono Nerd Font",
     "editor.fontSize": 13
   },
-  "editor.fontSize": 16,
+  "editor.fontSize": 15,
   "terminal.integrated.fontSize": 13,
   "debug.console.fontSize": 13,
 
@@ -31,9 +32,6 @@
   //
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[csharp]": { "editor.defaultFormatter": "csharpier.csharpier-vscode" },
-  "[xml]": { "editor.defaultFormatter": "csharpier.csharpier-vscode" },
-  "[rust]": { "editor.defaultFormatter": "rust-lang.rust-analyzer" },
 
   //
   // Vim settings/binds
@@ -58,9 +56,7 @@
   // Misc settings
   "extensions.ignoreRecommendations": true,
   "extensions.autoUpdate": true,
-  // "explorer.excludeGitIgnore": true,
   "editor.inlayHints.fontSize": 10,
-  "containers.containerClient": "com.microsoft.visualstudio.containers.docker",
   "workbench.editor.empty.hint": "hidden",
-  "plantuml.server": "https://www.plantuml.com/plantuml"
+  "explorer.excludeGitIgnore": true,
 }
