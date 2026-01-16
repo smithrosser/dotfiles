@@ -9,4 +9,5 @@ return {
   require 'plugins.treesitter',
   require 'plugins.conform',
   require 'plugins.autopairs',
+  require 'plugins.indent-blankline',
 }
