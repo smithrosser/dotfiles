@@ -16,7 +16,7 @@ return {
       cpp = { 'clang-format' },
       cmake = { 'cmake_language_server' },
       rust = { 'rustfmt' },
-      python = { 'black' },
+      python = { 'isort' },
       javascript = { 'prettier' },
       typescript = { 'prettier' },
       css = { 'prettier' },
