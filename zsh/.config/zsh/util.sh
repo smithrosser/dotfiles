@@ -75,8 +75,8 @@ alias ct="ctest --output-on-failure"
 
 # Reload .zshrc
 rl() {
-  echo "Reloading..."
   source ~/.zshrc
+	echo "Reloaded zsh configuration"
 }
 
 # Roku helpers
