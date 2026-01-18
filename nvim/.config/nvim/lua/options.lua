@@ -28,7 +28,7 @@ vim.opt.splitbelow = true
 
 -- Whitespace rendering
 vim.opt.list = true
-vim.opt.listchars = { tab = '  ', trail = '·' }
+vim.opt.listchars = { tab = '  ', trail = '·', space = '·' }
 
 vim.opt.inccommand = 'split' -- Live preview of substitutions
 vim.opt.cursorline = true
