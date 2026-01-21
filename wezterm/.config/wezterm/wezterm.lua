@@ -21,23 +21,22 @@ return {
   font = wezterm.font {
     family = font_name,
     weight = 450,
-    harfbuzz_features = { 'ss15' },
   },
+  font_size = 16,
+  -- cell_width = 0.9,
   font_rules = {
     -- Optionally disable italics
-    -- {
-    --   intensity = 'Normal',
-    --   italic = true,
-    --   font = wezterm.font { family = font_name, italic = false, weight = 500 },
-    -- },
-    -- {
-    --   intensity = 'Bold',
-    --   italic = true,
-    --   font = wezterm.font { family = font_name, italic = false, weight = 900 },
-    -- },
+    {
+      intensity = 'Normal',
+      italic = true,
+      font = wezterm.font { family = font_name, italic = false, weight = 500 },
+    },
+    {
+      intensity = 'Bold',
+      italic = true,
+      font = wezterm.font { family = font_name, italic = false, weight = 900 },
+    },
   },
-  font_size = 14,
-  -- cell_width = 0.9,
 
   front_end = 'WebGpu',
   window_decorations = 'TITLE | RESIZE | MACOS_USE_BACKGROUND_COLOR_AS_TITLEBAR_COLOR',
