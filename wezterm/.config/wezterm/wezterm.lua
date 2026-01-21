@@ -1,5 +1,5 @@
 local wezterm = require 'wezterm'
-local font_name = 'IntoneMono Nerd Font'
+local font_name = 'FiraCode Nerd Font'
 
 local function get_appearance()
   if wezterm.gui then
@@ -20,7 +20,8 @@ return {
   color_scheme = get_scheme_for_appearance(get_appearance()),
   font = wezterm.font {
     family = font_name,
-    weight = 500,
+    weight = 450,
+    harfbuzz_features = { 'ss15' },
   },
   font_rules = {
     -- Optionally disable italics
@@ -36,7 +37,7 @@ return {
     -- },
   },
   font_size = 14,
-  cell_width = 0.9,
+  -- cell_width = 0.9,
 
   front_end = 'WebGpu',
   window_decorations = 'TITLE | RESIZE | MACOS_USE_BACKGROUND_COLOR_AS_TITLEBAR_COLOR',

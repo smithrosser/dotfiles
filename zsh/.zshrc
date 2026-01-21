@@ -7,7 +7,13 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="alanpeabody"
+
+case $(hostname) in
+  (LG7790373X)  export COMPUTER_NAME="macbook";;
+  (PT2510011) 	export COMPUTER_NAME="mousetrap";;
+  (*)						export COMPUTER_NAME="toaster";;
+esac
+ZSH_THEME="chevrons"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -110,5 +116,13 @@ PATH_ADDITIONS="/home/tom/.local/bin:/usr/local/go/bin:/home/tom/.dotnet/tools"
 export PATH="$PATH:${PATH_ADDITIONS}"
 
 
+export GITLAB_ACCESS_TOKEN="pJm_wILSkyhDujD7dx_IvW86MQp1Ojh5ZAk.01.0z0ko3eh0"
+
 # Added by RokuCode installer
 export PATH="/home/tsmithrosser/.local/bin:$PATH"
+
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+fpath+=~/.zfunc
+
+eval "$(direnv hook zsh)"

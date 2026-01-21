@@ -30,7 +30,6 @@ ws () {
 v() {
 	pushd ~/ws/$1/$2
 	vi
-	popd
 }
 
 # File system
@@ -84,4 +83,5 @@ rip() {
 	export ROKU_DEV_TARGET=$1
 	echo "Set ROKU_DEV_TARGET to '$1'"
 }
+export ROKU_DEV_TARGET=10.27.37.119
 export DEVPASSWORD=tastycheese
