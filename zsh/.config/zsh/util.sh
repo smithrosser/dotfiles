@@ -37,7 +37,6 @@ dfu() {
 	pushd ~/dotfiles
 	git pull
 	popd
-	echo "Updated dotfiles"
 }
 
 # File system
