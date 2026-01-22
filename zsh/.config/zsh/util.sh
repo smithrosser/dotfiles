@@ -22,14 +22,22 @@ vivi() {
 }
 
 # Quick access to workspace folders
-ws () {
+ws() {
   cd ~/ws/$1/$2
 }
 
 # Go to folder inside 'ws' and start Neovim
 v() {
-	pushd ~/ws/$1/$2
+	cd ~/ws/$1/$2
 	vi
+}
+
+# Update dotfiles
+dfu() {
+	pushd ~/dotfiles
+	git pull
+	popd
+	echo "Updated dotfiles"
 }
 
 # File system
@@ -83,5 +91,3 @@ rip() {
 	export ROKU_DEV_TARGET=$1
 	echo "Set ROKU_DEV_TARGET to '$1'"
 }
-export ROKU_DEV_TARGET=10.27.37.119
-export DEVPASSWORD=tastycheese
