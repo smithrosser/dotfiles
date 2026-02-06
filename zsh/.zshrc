@@ -8,11 +8,13 @@ case $(hostname) in
         (*)	export COMPUTER_NAME="toaster" ;;
 esac
 
-# Automatically start tmux
-if [ -z "$TMUX" ]; then
-    # Create or attach to a default session
-    tmux new-session -A -s $COMPUTER_NAME
-    exit  # Explicitly exit the shell after tmux is done
+if [[ "$COMPUTER_NAME" == "mousetrap" ]]; then
+    #  Automatically start tmux
+    if [ -z "$TMUX" ]; then
+        # Create or attach to a default session
+        tmux new-session -A -s $COMPUTER_NAME
+        exit  # Explicitly exit the shell after tmux is done
+    fi
 fi
 
 # Set theme (or 'random')
@@ -61,4 +63,3 @@ export PATH="$PATH:${PATH_ADDITIONS}"
 if [[ "$COMPUTER_NAME" == "mousetrap" ]]; then
     eval "$(direnv hook zsh)"
 fi
-
