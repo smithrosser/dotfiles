@@ -73,7 +73,9 @@ return {
         harfbuzz_features = fonts[font_name].features,
     }),
     font_rules = get_italics_rules(fonts[font_name].italic),
+
     cell_width = (fonts[font_name].squeeze and 0.9) or 1,
+    line_height = 1.05,
 
     front_end = "WebGpu",
     window_decorations = "TITLE | RESIZE | MACOS_USE_BACKGROUND_COLOR_AS_TITLEBAR_COLOR",
