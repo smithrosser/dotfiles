@@ -3,10 +3,17 @@ export ZSH="$HOME/.oh-my-zsh"
 
 # Determine which computer zsh is running on
 case $(hostname) in
-  (LG7790373X)  export COMPUTER_NAME="macbook";;
-  (PT2510011) 	export COMPUTER_NAME="mousetrap";;
-  (*)						export COMPUTER_NAME="toaster";;
+        (LG7790373X) export COMPUTER_NAME="macbook" ;;
+        (PT2510011) export COMPUTER_NAME="mousetrap" ;;
+        (*)	export COMPUTER_NAME="toaster" ;;
 esac
+
+# Automatically start tmux
+if [ -z "$TMUX" ]; then
+    # Create or attach to a default session
+    tmux new-session -A -s $COMPUTER_NAME
+    exit  # Explicitly exit the shell after tmux is done
+fi
 
 # Set theme (or 'random')
 ZSH_THEME="chevrons"
@@ -33,23 +40,25 @@ source $ZSH/oh-my-zsh.sh
 source ~/.config/zsh/util.sh
 source ~/.config/zsh/secrets.sh 2> /dev/null
 
+# Set subvinity barestore location
+export SVIN_BARESTORE_LOCATION=/home/tsmithrosser/.subvinity/barestore/
+
 # Node version manager
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
-# Extra PATH locations
-PATH_ADDITIONS="\
-	/home/tom/.local/bin:\
-	/home/tsmithrosser/.local/bin"
-export PATH="$PATH:${PATH_ADDITIONS}"
 
 # Enable completions for some Roku utility
 autoload -Uz compinit
 zstyle ':completion:*' menu select
 fpath+=~/.zfunc
 
+# Extra PATH locations
+PATH_ADDITIONS="/home/tom/.local/bin:/home/tsmithrosser/.local/bin"
+export PATH="$PATH:${PATH_ADDITIONS}"
+
 # Enable direnv
 if [[ "$COMPUTER_NAME" == "mousetrap" ]]; then
-	eval "$(direnv hook zsh)"
+    eval "$(direnv hook zsh)"
 fi
+

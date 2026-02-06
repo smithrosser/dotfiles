@@ -1,16 +1,16 @@
 local themes = {
-  tokyonight = {
-    'folke/tokyonight.nvim',
-    lazy = false,
-    priority = 1000,
-    config = function()
-      require('tokyonight').setup {
-        style = 'moon',
-        day_brightness = 0.1,
-      }
-      vim.cmd.colorscheme 'tokyonight'
-    end,
-  },
+    kanagawa = {
+        "rebelot/kanagawa.nvim",
+        priority = 1000,
+        config = function()
+            require("kanagawa").setup({
+                theme = "wave",
+                colors = { theme = { all = { ui = { bg_gutter = "none" } } } },
+            })
+            vim.cmd("colorscheme kanagawa")
+        end,
+    },
 }
+local selected = "kanagawa"
 
-return themes['tokyonight']
+return { themes[selected] }

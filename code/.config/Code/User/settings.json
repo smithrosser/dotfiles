@@ -5,8 +5,6 @@
   "window.autoDetectColorScheme": true,
   "workbench.preferredDarkColorTheme": "Tokyo Night Storm",
   "workbench.preferredLightColorTheme": "Tokyo Night Light",
-  "editor.fontWeight": 450,
-  "editor.fontLigatures": true,
   "editor.minimap.enabled": false,
   "editor.cursorBlinking": "solid",
   "editor.bracketPairColorization.enabled": false,
@@ -16,15 +14,17 @@
   //
   // Fonts
   //
-  "editor.fontFamily": "IntoneMono Nerd Font",
-  "terminal.integrated.fontFamily": "IntoneMono Nerd Font",
-  "debug.console.fontFamily": "IntoneMono Nerd Font",
+  "terminal.integrated.fontFamily": "FiraMono Nerd Font",
+  "debug.console.fontFamily": "FiraMono Nerd Font",
   "[Log][log]": {
-    "editor.fontFamily": "IntoneMono Nerd Font",
-    "editor.fontSize": 13
+    "editor.fontFamily": "FiraMono Nerd Font",
+    "editor.fontSize": 13,
   },
-  "editor.fontSize": 15,
-  "terminal.integrated.fontSize": 13,
+  "editor.fontFamily": "FiraCode Nerd Font",
+  "editor.fontSize": 13,
+  "editor.fontWeight": 500,
+  // "editor.fontLigatures": "'ss07'",
+  "terminal.integrated.fontSize": 12,
   "debug.console.fontSize": 13,
 
   //
@@ -46,11 +46,11 @@
     { "before": ["leader", "r", "a"], "commands": ["editor.action.rename"] },
     {
       "before": ["leader", "leader"],
-      "commands": ["workbench.action.quickOpen"]
-    }
+      "commands": ["workbench.action.quickOpen"],
+    },
   ],
   "vim.visualModeKeyBindings": [
-    { "before": ["leader", "/"], "commands": ["editor.action.commentLine"] }
+    { "before": ["leader", "/"], "commands": ["editor.action.commentLine"] },
   ],
 
   // Misc settings
@@ -59,4 +59,5 @@
   "editor.inlayHints.fontSize": 10,
   "workbench.editor.empty.hint": "hidden",
   "explorer.excludeGitIgnore": true,
+  "git.autofetch": true,
 }

@@ -1,30 +1,17 @@
-local parsers = {
-  'c',
-  'cpp',
-  'cmake',
-  'lua',
-  'python',
-  'typescript',
-  'javascript',
-  'vimdoc',
-  'json',
-  'toml',
-  'yaml',
-  'xml',
-  'brightscript',
-}
-
 return {
-  'nvim-treesitter/nvim-treesitter',
-  lazy = false,
-  tag = 'v0.10.0',
-  build = ':TSUpdate',
-  config = function()
-    require('nvim-treesitter.configs').setup {
-      ensure_installed = parsers,
-      auto_install = true,
-      indent = { enable = true },
-      highlight = { enable = true },
-    }
-  end,
+    -- Tree-sitter: blazing-fast syntax trees & highlighting
+    {
+        "nvim-treesitter/nvim-treesitter",
+        config = function()
+            local parsers = require("configs.parsers")
+
+            require("nvim-treesitter").install(parsers)
+            vim.api.nvim_create_autocmd("FileType", {
+                pattern = parsers,
+                callback = function()
+                    vim.treesitter.start()
+                end,
+            })
+        end,
+    },
 }

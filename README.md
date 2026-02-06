@@ -8,7 +8,7 @@ For most packages:
 stow <package_name>
 
 ```
-For `code` and `fontconfig` packages, add `--no-folding` argument to symlink files only:
+For `code`, `oh-my-zsh` add `--no-folding` argument to symlink files only:
 
 ```bash
 stow --no-folding <package_name>
