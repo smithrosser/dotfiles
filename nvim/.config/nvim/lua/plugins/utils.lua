@@ -14,14 +14,7 @@ return {
                 desc = "[F]ormat buffer",
             },
         },
-        opts = {
-            notify_on_error = true,
-            format_on_save = {
-                timeout_ms = 500,
-                lsp_format = "fallback",
-            },
-            formatters_by_ft = require("configs.formatters"),
-        },
+        opts = require("configs.conform"),
     },
 
     -- Auto close paired chars (quotes, brackets, etc.)
@@ -37,6 +30,17 @@ return {
         event = "VimEnter",
         dependencies = { "nvim-lua/plenary.nvim" },
         opts = { signs = false },
+    },
+
+    -- Telescope picker for code actions
+    {
+        "rachartier/tiny-code-action.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim",
+        },
+        event = "LspAttach",
+        opts = {},
     },
 
     -- Pretty self-explanatory

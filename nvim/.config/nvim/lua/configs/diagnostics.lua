@@ -14,7 +14,7 @@ return function()
         },
         virtual_text = {
             source = false,
-            prefix = " ",
+            prefix = "",
             spacing = 1,
         },
     })

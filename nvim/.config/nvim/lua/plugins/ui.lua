@@ -53,6 +53,18 @@ return {
         },
     },
 
+    -- renamer.nvim: better-looking symbol renaming
+    {
+        "filipdutescu/renamer.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        opts = {
+            title = "Rename",
+            show_refs = true,
+            border = true,
+            with_popup = true,
+        },
+    },
+
     -- indent-blankline: highlights indented blocks clearly
     {
         "lukas-reineke/indent-blankline.nvim",

@@ -2,4 +2,5 @@
 return {
     "stylua",
     "clang-format",
+    "beautysh",
 }

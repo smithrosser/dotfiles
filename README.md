@@ -8,7 +8,7 @@ For most packages:
 stow <package_name>
 
 ```
-For `code`, `oh-my-zsh` add `--no-folding` argument to symlink files only:
+For `code`, `tmux`, and `oh-my-zsh`,add `--no-folding` argument to symlink files only & avoid random files being placed into the repo:
 
 ```bash
 stow --no-folding <package_name>
