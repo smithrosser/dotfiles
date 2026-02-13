@@ -1,15 +1,17 @@
 local formatters_by_ft = {
     lua = { "stylua" },
-    c = { "clang-format" },
-    cpp = { "clang-format" },
     bash = { "beautysh" },
     zsh = { "beautysh" },
     sh = { "beautysh" },
+    python = { "black" },
 
+    c = {},
+    cpp = {},
     brightscript = {},
 }
 local lsp_fallback_exclusions = {
     "brightscript",
+    "cpp",
 }
 
 return {

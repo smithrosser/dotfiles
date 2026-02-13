@@ -8,7 +8,7 @@ case $(hostname) in
         (*)	export COMPUTER_NAME="toaster" ;;
 esac
 
-if [[ "$COMPUTER_NAME" == "mousetrap" ]]; then
+if [[ "$COMPUTER_NAME" == "mousetrap" && "$NO_TMUX" != 1 ]]; then
     #  Automatically start tmux
     if [ -z "$TMUX" ]; then
         # Create or attach to a default session
@@ -38,28 +38,16 @@ source $ZSH/oh-my-zsh.sh
 #  User configuration
 # =======================================================
 
-# Extra utilities, secrets
-source ~/.config/zsh/util.sh
-source ~/.config/zsh/secrets.sh 2> /dev/null
-
-# Set subvinity barestore location
-export SVIN_BARESTORE_LOCATION=/home/tsmithrosser/.subvinity/barestore/
 
 # Node version manager
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-# Enable completions for some Roku utility
-autoload -Uz compinit
-zstyle ':completion:*' menu select
-fpath+=~/.zfunc
-
 # Extra PATH locations
-PATH_ADDITIONS="/home/tom/.local/bin:/home/tsmithrosser/.local/bin"
+PATH_ADDITIONS="/home/$USER/.local/bin"
 export PATH="$PATH:${PATH_ADDITIONS}"
 
-# Enable direnv
-if [[ "$COMPUTER_NAME" == "mousetrap" ]]; then
-    eval "$(direnv hook zsh)"
-fi
+# Extra utilities, secrets
+source ~/.config/zsh/util.sh
+source ~/.config/zsh/work.sh

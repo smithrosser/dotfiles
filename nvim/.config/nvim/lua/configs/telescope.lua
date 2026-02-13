@@ -32,4 +32,6 @@ return function()
             previewer = false,
         }))
     end, { desc = "Search current file" })
+    -- Search git changes
+    vim.keymap.set("n", "<leader>gg", builtin.git_status, { desc = "Search inside files" })
 end

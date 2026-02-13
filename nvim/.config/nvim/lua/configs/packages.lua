@@ -3,4 +3,6 @@ return {
     "stylua",
     "clang-format",
     "beautysh",
+    "black",
+    "bslint",
 }

@@ -13,6 +13,10 @@ return {
     {
         "nvim-telescope/telescope.nvim",
         version = "*",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+        },
         event = "VimEnter",
         config = require("configs.telescope"),
     },
@@ -36,21 +40,13 @@ return {
     {
         "nvim-lualine/lualine.nvim",
         event = "VimEnter",
-        opts = {
-            sections = {
-                -- Add navic context to statusline
-                lualine_c = {
-                    {
-                        function()
-                            return require("nvim-navic").get_location()
-                        end,
-                        cond = function()
-                            return require("nvim-navic").is_available()
-                        end,
-                    },
-                },
-            },
-        },
+        config = require("configs.lualine"),
+    },
+
+    -- Winbar.nvim: powerline-style winbar
+    {
+        "fgheng/winbar.nvim",
+        opts = {},
     },
 
     -- renamer.nvim: better-looking symbol renaming
@@ -81,5 +77,12 @@ return {
             fidget.setup({})
             vim.notify = fidget.notify
         end,
+    },
+
+    -- toggleterm.nvim: floating terminal with state
+    {
+        "akinsho/toggleterm.nvim",
+        version = "*",
+        opts = {},
     },
 }

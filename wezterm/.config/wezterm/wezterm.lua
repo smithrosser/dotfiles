@@ -36,15 +36,15 @@ local fonts = {
         features = {},
         squeeze = false,
     },
-    intel_one_mono = {
-        name = "IntoneMono Nerd Font",
+    iosevka_term = {
+        name = "IosevkaTerm Nerd Font",
         weight = 500,
         italic = true,
-        features = { "ss01" },
+        features = { "ss07" },
         squeeze = false,
     },
 }
-local font_name = "jetbrains"
+local font_name = "iosevka_term"
 
 --
 -- Generate font rule for disabling italics if requested
@@ -75,7 +75,7 @@ return {
     font_rules = get_italics_rules(fonts[font_name].italic),
 
     cell_width = (fonts[font_name].squeeze and 0.9) or 1,
-    line_height = 1.05,
+    line_height = 1.1,
 
     front_end = "WebGpu",
     window_decorations = "TITLE | RESIZE | MACOS_USE_BACKGROUND_COLOR_AS_TITLEBAR_COLOR",

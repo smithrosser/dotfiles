@@ -35,7 +35,15 @@ return {
         },
 
         -- C/C++
-        clangd = {},
+        clangd = {
+            cmd = {
+                "clangd",
+                "--compile-commands-dir=/home/tsmithrosser/ws/firmware/worktrees/main/build",
+                "--background-index",
+                "--clang-tidy",
+                "--log=verbose",
+            },
+        },
 
         -- bash/zsh/sh
         bashls = {},

@@ -29,6 +29,7 @@ return {
                     map("gD", builtin.lsp_type_definitions, "[G]o to type [D]efinition")
                     map("gi", builtin.lsp_implementations, "[G]o to [i]mplementation")
                     map("gr", builtin.lsp_references, "[G]o to [r]eferences")
+                    map("<leader>d", builtin.diagnostics, "List [d]iagnostics")
                 end,
             })
 
