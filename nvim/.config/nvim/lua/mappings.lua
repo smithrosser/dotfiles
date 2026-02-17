@@ -2,7 +2,7 @@
 vim.keymap.set("n", ";", ":")
 
 -- Jump to shell command
-vim.keymap.set("n", "<CR><CR>", ":!")
+vim.keymap.set("n", "<CR><CR>", ":!source ~/.zshrc && ")
 
 -- Plugin/package managers
 vim.keymap.set("n", "<leader>la", ":Lazy<CR>", { desc = "Open [la]zy" })

@@ -37,28 +37,32 @@ return {
         -- C/C++
         clangd = {
             cmd = {
-                "clangd",
-                "--compile-commands-dir=/home/tsmithrosser/ws/firmware/worktrees/main/build",
-                "--background-index",
-                "--clang-tidy",
-                "--log=verbose",
+                -- "clangd",
+                -- "--compile-commands-dir=/home/tsmithrosser/ws/firmware/worktrees/main/build",
+                -- "--background-index",
+                -- "--clang-tidy",
+                -- "--log=verbose",
             },
         },
+
+        -- python
+        pyright = {},
 
         -- bash/zsh/sh
         bashls = {},
 
         -- BrighterScript LSP (Roku Community LSP)
-        -- bright_script = {
-        --     cmd = { "bsc", "--lsp", "--stdio" },
-        --     filetypes = { "brs", "xml", "brightscript" },
-        --     root_markers = { ".git", "bsconfig.json", "Makefile", "makefile" },
-        --     settings = {
-        --         bsc = {
-        --             configFile = "./bsconfig.json",
-        --         },
-        --     },
-        -- },
+        bright_script = {
+            cmd = { "bsc", "--lsp", "--stdio" },
+            filetypes = { "brs", "xml", "brightscript" },
+            root_markers = { "bsconfig.json", ".git", "manifest", "Makefile", "makefile" },
+            settings = {
+                bsc = {
+                    configFile = "./bsconfig.json",
+                    diagnosticFilters = true,
+                },
+            },
+        },
     },
 
     --
@@ -66,24 +70,24 @@ return {
     --
     manual_install = {
         -- RokuCode BrightScript LSP
-        brightscript = {
-            cmd = { "rokucode", "lsp", "brightscript", "start" },
-            filetypes = { "brightscript", "brs", "xml" },
-            root_markers = {
-                "manifest", -- Roku app manifest (always present)
-                ".git", -- Git repository root
-                ".rokucode", -- RokuCode config directory
-                ".opencode", -- OpenCode config directory
-                "source", -- Common BrightScript source directory
-                "components", -- SceneGraph components directory
-            },
-            settings = {
-                brightscript = {
-                    diagnostics = { enable = true },
-                    hover = { enable = true },
-                    completion = { enable = true },
-                },
-            },
-        },
+        -- brightscript = {
+        --     cmd = { "rokucode", "lsp", "brightscript", "start" },
+        --     filetypes = { "brightscript", "brs", "xml" },
+        --     root_markers = {
+        --         "manifest", -- Roku app manifest (always present)
+        --         ".git", -- Git repository root
+        --         ".rokucode", -- RokuCode config directory
+        --         ".opencode", -- OpenCode config directory
+        --         "source", -- Common BrightScript source directory
+        --         "components", -- SceneGraph components directory
+        --     },
+        --     settings = {
+        --         brightscript = {
+        --             diagnostics = { enable = true },
+        --             hover = { enable = true },
+        --             completion = { enable = true },
+        --         },
+        --     },
+        -- },
     },
 }

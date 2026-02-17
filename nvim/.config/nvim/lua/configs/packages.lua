@@ -5,4 +5,6 @@ return {
     "beautysh",
     "black",
     "bslint",
+    "prettier",
+    "xmlformatter",
 }

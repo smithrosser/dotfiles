@@ -8,6 +8,12 @@ local formatters_by_ft = {
     c = {},
     cpp = {},
     brightscript = {},
+
+    json = { "prettier" },
+    jsonc = { "prettier" },
+    yaml = { "prettier" },
+    toml = { "prettier" },
+    xml = { "xmlformatter" },
 }
 local lsp_fallback_exclusions = {
     "brightscript",

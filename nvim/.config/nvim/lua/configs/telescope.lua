@@ -1,5 +1,9 @@
 return function()
     require("telescope").setup({
+        defaults = {
+            width = 0.9,
+            height = 0.9,
+        },
         extensions = {
             ["ui-select"] = {
                 require("telescope.themes").get_dropdown(),
