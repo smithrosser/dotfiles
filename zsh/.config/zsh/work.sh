@@ -38,10 +38,12 @@ gran() {
             make installlibwithtests
             ;;
         "log" | "l") # Open telnet 8885, filter for messages containing TDSR
-            if [[ "$2" == "" ]]; then
-                python3 ~/dotfiles/scripts/gran_log.py $ROKU_DEV_TARGET 8885
+            [[ $# -lt  2 ]] && { echo "Usage: gran (l)og <port> <pattern (optional)>"; return 1 }
+
+            if [[ "$3" == "" ]]; then
+                python3 ~/dotfiles/scripts/gran_log.py $ROKU_DEV_TARGET $2
             else
-                python3 ~/dotfiles/scripts/gran_log.py $ROKU_DEV_TARGET 8885 $2
+                python3 ~/dotfiles/scripts/gran_log.py $ROKU_DEV_TARGET $2 $3
             fi
             ;;
         *) # Reject invalid arguments
@@ -79,6 +81,10 @@ srp() {
             ;;
     esac
 
+}
+
+tnt() {
+    telnet $ROKU_DEV_TARGET $1
 }
 
 # Enable completions (some Roku setup required it)
