@@ -8,15 +8,6 @@ case $(hostname) in
         (*)	export COMPUTER_NAME="toaster" ;;
 esac
 
-if [[ "$COMPUTER_NAME" == "mousetrap" && "$NO_TMUX" != 1 ]]; then
-    #  Automatically start tmux
-    if [ -z "$TMUX" ]; then
-        # Create or attach to a default session
-        tmux new-session -A -s $COMPUTER_NAME
-        exit  # Explicitly exit the shell after tmux is done
-    fi
-fi
-
 # Set theme (or 'random')
 ZSH_THEME="chevrons"
 

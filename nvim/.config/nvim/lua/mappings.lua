@@ -35,3 +35,8 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set({ "n", "t" }, "<Esc><Esc>", function()
     require("toggleterm").toggle(1, nil, nil, "float", nil)
 end, { desc = "[T]oggle floating [t]erminal" })
+
+-- Toggle dark/light mode
+vim.keymap.set("n", "<leader>th", function()
+    vim.o.background = vim.o.background == "dark" and "light" or "dark"
+end, { desc = "Toggle dark/light [th]eme" })

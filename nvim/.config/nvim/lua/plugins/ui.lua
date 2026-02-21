@@ -36,13 +36,6 @@ return {
         opts = require("configs.neo-tree"),
     },
 
-    -- Lualine: improved statusline
-    {
-        "nvim-lualine/lualine.nvim",
-        event = "VimEnter",
-        config = require("configs.lualine"),
-    },
-
     -- Winbar.nvim: powerline-style winbar
     {
         "fgheng/winbar.nvim",

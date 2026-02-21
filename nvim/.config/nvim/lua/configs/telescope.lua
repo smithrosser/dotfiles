@@ -1,9 +1,15 @@
 return function()
-    require("telescope").setup({
-        defaults = {
-            width = 0.9,
+    local ivy_theme = require("telescope.themes").get_ivy()
+    ivy_theme.layout_config = {
+        bottom_pane = {
             height = 0.9,
         },
+    }
+    ivy_theme.prompt_prefix = "  "
+    ivy_theme.selection_caret = " "
+
+    require("telescope").setup({
+        defaults = ivy_theme,
         extensions = {
             ["ui-select"] = {
                 require("telescope.themes").get_dropdown(),
@@ -24,18 +30,12 @@ return function()
     local builtin = require("telescope.builtin")
 
     -- Search available Telescope pickers
-    vim.keymap.set("n", "<leader>ss", builtin.builtin, { desc = "[S]earch [S]elect Telescope" })
-    -- Search filenames
     vim.keymap.set("n", "<leader><leader>", builtin.find_files, { desc = "Search files" })
-    -- Search inside files
-    vim.keymap.set("n", "<leader>.", builtin.live_grep, { desc = "Search inside files" })
-    -- Search current file
-    vim.keymap.set("n", "<C-/>", function()
-        builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
-            winblend = 10,
-            previewer = false,
-        }))
-    end, { desc = "Search current file" })
-    -- Search git changes
-    vim.keymap.set("n", "<leader>gg", builtin.git_status, { desc = "Search inside files" })
+    vim.keymap.set("n", "<leader>.", builtin.live_grep, { desc = "Search files for keyword" })
+    vim.keymap.set("n", "<leader>>", function()
+        require("telescope.builtin").live_grep({ default_text = vim.fn.expand("<cword>") })
+    end, { desc = "Search files for keyword under cursor" })
+    vim.keymap.set("n", "<C-_>", builtin.current_buffer_fuzzy_find, { desc = "Search current file" })
+    vim.keymap.set("n", "<leader>gg", builtin.git_status, { desc = "Search git diffs" })
+    vim.keymap.set("n", "<leader>ss", builtin.builtin, { desc = "Telescope [s]earch [s]elect" })
 end

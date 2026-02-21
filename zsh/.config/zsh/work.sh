@@ -1,29 +1,33 @@
 # Work-related aliases, variables and utilities
 
-## SSH into mousetrap
-mtrap() {
-    case "$1" in
-        "fresh" | "f")
-            local NO_TMUX=1
-            ssh mt -o SendEnv=NO_TMUX
-            ;;
-        *)
-            ssh mt
-            ;;
-    esac
+# SS4K build using bitbq
+alias bbq="bitbq -p logan:dev build"
+
+# tmux session management
+tm() {
+    if [[ -z "$1" ]]; then
+        tmux list-sessions
+    else
+        local session_name="mousetrap  $1"
+        tmux attach-session -t $session_name > /dev/null || tmux new-session -s $session_name
+
+        exit # Quit session on tmux session end
+    fi
 }
+
 
 # Roku helpers
 rws() {
+    local roku_ws_base=~/ws/roku
     case "$1" in
         "gc")
-            cd ~/ws/gc/worktrees/dev/library
+            cd $roku_ws_base/gc/worktrees/dev/library
             ;;
         "fw")
-            cd ~/ws/firmware/worktrees/main
+            cd $roku_ws_base/firmware/worktrees/main/sources/rokuos/os/RokuOS
             ;;
         "rpay" )
-            cd ~/ws/roku-pay-lib
+            cd $roku_ws_base/roku-pay-lib
             ;;
         *)
             echo "Usage: rws [gc, fw, rpay]"
@@ -35,7 +39,7 @@ rws() {
 gran() {
     case "$1" in
         "flash" | "f") # Install GC to device (with unit tests)
-            make installlibwithtests
+            make installlib
             ;;
         "log" | "l") # Open telnet 8885, filter for messages containing TDSR
             [[ $# -lt  2 ]] && { echo "Usage: gran (l)og <port> <pattern (optional)>"; return 1 }
@@ -54,7 +58,7 @@ gran() {
 
 # Reset USB capture card
 ccr() {
-    ~/ws/stream/ccr.sh
+    ~/dotfiles/scripts/ccr.sh
 }
 
 # GC Toolbox 'get services payload' wrapper

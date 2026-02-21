@@ -67,14 +67,13 @@ alias ....='cd ../../..'
 # `grep -i` takes too long
 alias grepi="grep -i"
 
-# Suppress 'clear' command so I can scroll up still
-clear() {
-    echo "did you mean '^L?'"
-}
-
 # CMake stuff
 alias cb="cmake --build"
 alias cm="cmake"
 alias ct="ctest --output-on-failure"
 
+# Suppress 'clear' command so I can scroll up still
+clear() {
+    echo "did you mean '^L?'"
+}
 

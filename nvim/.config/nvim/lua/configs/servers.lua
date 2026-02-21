@@ -37,11 +37,11 @@ return {
         -- C/C++
         clangd = {
             cmd = {
-                -- "clangd",
-                -- "--compile-commands-dir=/home/tsmithrosser/ws/firmware/worktrees/main/build",
-                -- "--background-index",
-                -- "--clang-tidy",
-                -- "--log=verbose",
+                "clangd",
+                "--compile-commands-dir=/home/tsmithrosser/ws/firmware/worktrees/main/build",
+                "--background-index",
+                "--clang-tidy",
+                "--log=verbose",
             },
         },
 
