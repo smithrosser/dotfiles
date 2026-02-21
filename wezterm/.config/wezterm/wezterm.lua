@@ -12,16 +12,33 @@ end
 
 local function get_scheme_for_appearance(appearance)
     if appearance:find("Dark") then
-        return "Kanagawa (Gogh)"
+        return "tokyonight"
     else
-        return "Kanagawa (Gogh)"
+        return "tokyonight-day"
     end
 end
+
+-- Configure callback for light/dark theme switch
+local function broadcast_appearance(window, pane)
+    local is_dark = window:get_appearance():find("Dark") ~= nil
+    local mode = is_dark and "dark" or "light"
+
+    pane:set_user_var("APPEARANCE", mode)
+end
+wezterm.on("window-config-reloaded", broadcast_appearance)
+wezterm.on("window-focus-changed", broadcast_appearance)
 
 --
 -- Commonly used font presets
 --
 local fonts = {
+    recursive = {
+        name = "RecMonoCasual Nerd Font", -- font family name
+        weight = 450, -- font weight
+        italic = true, -- enable italics
+        features = {}, -- opentype features (stylistic sets, etc)
+        squeeze = false, -- reduced cell width
+    },
     jetbrains = {
         name = "JetBrainsMono Nerd Font", -- font family name
         weight = 450, -- font weight
@@ -44,7 +61,7 @@ local fonts = {
         squeeze = false,
     },
 }
-local font_name = "iosevka_term"
+local font_name = "recursive"
 
 --
 -- Generate font rule for disabling italics if requested
@@ -66,7 +83,7 @@ end
 --
 return {
     color_scheme = get_scheme_for_appearance(get_appearance()),
-    font_size = 13,
+    font_size = 14,
     font = wezterm.font({
         family = fonts[font_name].name,
         weight = fonts[font_name].weight,
@@ -75,11 +92,11 @@ return {
     font_rules = get_italics_rules(fonts[font_name].italic),
 
     cell_width = (fonts[font_name].squeeze and 0.9) or 1,
-    line_height = 1.1,
+    -- line_height = 1.1,
 
     front_end = "WebGpu",
     window_decorations = "TITLE | RESIZE | MACOS_USE_BACKGROUND_COLOR_AS_TITLEBAR_COLOR",
-    window_padding = { left = 20, right = 20, top = 20, bottom = 20 },
+    -- window_padding = { left = 5, right = 5, top = 5, bottom = 5 },
 
     enable_wayland = false,
     enable_tab_bar = false,
