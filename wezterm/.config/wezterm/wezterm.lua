@@ -1,32 +1,40 @@
 local wezterm = require("wezterm")
 
 --
--- Helper functions for determining dark/light theme
+-- Commonly-used theme presets
 --
-local function get_appearance()
-    if wezterm.gui then
-        return wezterm.gui.get_appearance()
-    end
-    return "Dark"
-end
+local themes = {
+    tokyonight = {
+        light = "tokyonight-day",
+        dark = "tokyonight",
+    },
+    everforest = {
+        light = "Everforest Light Soft (Gogh)",
+        dark = "Everforest Dark Soft (Gogh)",
+    },
+}
+local theme_name = "everforest"
 
-local function get_scheme_for_appearance(appearance)
+--
+-- Automatically determine light/dark theme from OS appearance
+--
+local function scheme_for_appearance(appearance)
     if appearance:find("Dark") then
-        return "tokyonight"
+        return themes[theme_name].dark
     else
-        return "tokyonight-day"
+        return themes[theme_name].light
     end
 end
+wezterm.on("window-config-reloaded", function(window, pane)
+    local overrides = window:get_config_overrides() or {}
+    local appearance = window:get_appearance()
+    local scheme = scheme_for_appearance(appearance)
 
--- Configure callback for light/dark theme switch
-local function broadcast_appearance(window, pane)
-    local is_dark = window:get_appearance():find("Dark") ~= nil
-    local mode = is_dark and "dark" or "light"
-
-    pane:set_user_var("APPEARANCE", mode)
-end
-wezterm.on("window-config-reloaded", broadcast_appearance)
-wezterm.on("window-focus-changed", broadcast_appearance)
+    if overrides.color_scheme ~= scheme then
+        overrides.color_scheme = scheme
+        window:set_config_overrides(overrides)
+    end
+end)
 
 --
 -- Commonly used font presets
@@ -82,7 +90,7 @@ end
 -- Configuration
 --
 return {
-    color_scheme = get_scheme_for_appearance(get_appearance()),
+    color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
     font_size = 14,
     font = wezterm.font({
         family = fonts[font_name].name,
@@ -96,7 +104,7 @@ return {
 
     front_end = "WebGpu",
     window_decorations = "TITLE | RESIZE | MACOS_USE_BACKGROUND_COLOR_AS_TITLEBAR_COLOR",
-    -- window_padding = { left = 5, right = 5, top = 5, bottom = 5 },
+    window_padding = { left = 30, right = 30, top = 30, bottom = 30 },
 
     enable_wayland = false,
     enable_tab_bar = false,
