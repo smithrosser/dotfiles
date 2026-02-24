@@ -8,7 +8,7 @@ tm() {
     if [[ -z "$1" ]]; then
         tmux list-sessions
     else
-        local session_name="mousetrap  $1"
+        local session_name="$1"
         tmux attach-session -t $session_name > /dev/null || tmux new-session -s $session_name
 
         exit # Quit session on tmux session end
@@ -27,7 +27,7 @@ rws() {
             cd $roku_ws_base/firmware/worktrees/main/sources/rokuos/os/RokuOS
             ;;
         "rpay" )
-            cd $roku_ws_base/roku-pay-lib
+            cd $roku_ws_base/roku-pay-lib/library
             ;;
         *)
             echo "Usage: rws [gc, fw, rpay]"
@@ -50,7 +50,7 @@ gran() {
                 python3 ~/dotfiles/scripts/gran_log.py $ROKU_DEV_TARGET $2 $3
             fi
             ;;
-        *) # Reject invalid arguments
+        *)
             echo "Usage: gran [(f)lash, (l)og]"
             ;;
     esac
