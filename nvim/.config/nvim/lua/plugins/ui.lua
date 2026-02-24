@@ -36,10 +36,10 @@ return {
         opts = require("configs.neo-tree"),
     },
 
-    -- Winbar.nvim: powerline-style winbar
+    -- Lualine: configurable statusline
     {
-        "fgheng/winbar.nvim",
-        opts = {},
+        "nvim-lualine/lualine.nvim",
+        config = require("configs.lualine"),
     },
 
     -- renamer.nvim: better-looking symbol renaming

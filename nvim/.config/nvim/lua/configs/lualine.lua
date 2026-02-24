@@ -9,8 +9,11 @@ return function()
     vim.api.nvim_create_autocmd("RecordingLeave", { callback = refresh })
 
     require("lualine").setup({
+        options = {
+            component_separators = "",
+            section_separators = { left = "", right = "" },
+        },
         sections = {
-            -- Add navic context to statusline
             lualine_c = {
                 {
                     function()
@@ -21,23 +24,12 @@ return function()
                     end,
                 },
             },
-            lualine_z = { "filename" },
-            lualine_y = { "lsp_status" },
-            lualine_x = {
-                {
-                    -- show register in lualine
-                    function()
-                        local recording_register = vim.fn.reg_recording()
-                        local recorded_register = vim.fn.reg_recorded()
-
-                        if recording_register ~= "" then
-                            return "recording @" .. recording_register
-                        elseif recorded_register ~= "" then
-                            return "recorded @" .. recorded_register
-                        end
-                        return ""
-                    end,
-                },
+            lualine_y = {
+                { "progress", separator = " ", padding = { left = 1, right = 0 } },
+                { "location", padding = { left = 0, right = 1 } },
+            },
+            lualine_z = {
+                "filename",
             },
         },
     })

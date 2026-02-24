@@ -1,6 +1,10 @@
 -- Pinky saver
 vim.keymap.set("n", ";", ":")
 
+-- Map down/up to gj, gk for easier navigation when wrapped
+vim.keymap.set("n", "j", "gj")
+vim.keymap.set("n", "k", "gk")
+
 -- Jump to shell command
 vim.keymap.set("n", "<CR><CR>", ":!source ~/.zshrc && ")
 
