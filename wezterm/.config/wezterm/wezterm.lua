@@ -91,7 +91,7 @@ end
 --
 return {
     color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
-    font_size = 14,
+    font_size = 12,
     font = wezterm.font({
         family = fonts[font_name].name,
         weight = fonts[font_name].weight,
@@ -103,8 +103,8 @@ return {
     -- line_height = 1.1,
 
     front_end = "WebGpu",
-    window_decorations = "TITLE | RESIZE | MACOS_USE_BACKGROUND_COLOR_AS_TITLEBAR_COLOR",
-    window_padding = { left = 30, right = 30, top = 30, bottom = 30 },
+    window_decorations = "RESIZE | INTEGRATED_BUTTONS",
+    window_padding = { left = 10, right = 10, top = 10, bottom = 10 },
 
     enable_wayland = false,
     enable_tab_bar = false,
