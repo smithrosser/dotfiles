@@ -1,106 +1,58 @@
 * {
-    border: none;
-    border-radius: 0;
-    font-family: "RecMonoCasual Nerd Font";
-    font-size: 14px;
+    font-family: "FiraGO";
+    font-size: 16px;
     min-height: 0;
+    color: white;
 }
 
 window#waybar {
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
+    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 0px 4px;
 }
 
-#window {
-    font-weight: bold;
-    font-family: "RecMonoCasual Nerd Font";
+#workspaces{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    margin-left: 25px;
 }
 
-#workspaces {
-    /* padding: 0 10px; */
-    /* margin: 0 10px; */
+#workspaces button{
+    border: 2px solid transparent;
+    border-radius: 15px;
+    margin-right: 5px;
+    padding: 1px 10px;
+    font-weight: bolder;
+    background-color: #282828;
+
+    /* try this out  */
+    transition: all 0.075s cubic-bezier(.55,-0.04,.64,.66);
 }
 
-#workspaces button {
-    margin: 5px;
-    padding: 2px 15px;
-    background: transparent;
-    color: rgba(255, 255, 255, 1.0);
-    border-radius: 1000px;
-    font-weight: 900;
-}
-
-#workspaces button.focused {
+#workspaces button.active, #workspaces button.focused{
     color: black;
-    background: rgba(255, 255, 255, 1.0);
+    padding: 0 25px;
+    background: #7C9D96;
 }
 
-#workspaces button.urgent {
-  color: #c9545d;
-}
-
-#mode {
-    background: #64727D;
-    border-bottom: 3px solid white;
-}
-
-#clock, #battery, #cpu, #memory, #network, #pulseaudio, #custom-spotify, #tray, #mode {
-    padding: 0 3px;
-    margin: 0 2px;
-}
-
-#clock {
-    font-weight: bold;
-}
-
-#battery {
-}
-
-#battery icon {
-    color: red;
-}
-
-#battery.charging {
-}
-
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: black;
-    }
-}
-
-#battery.warning:not(.charging) {
-    color: white;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-#cpu {
-}
-
-#memory {
-}
-
+#tray,
+#mpd,
+#custom-weather,
+#cpu, 
+#temperature, 
+#memory,
+#sway-mode,
+#backlight, 
+#pulseaudio, 
+#custom-vpn,
+#disk,
+#custom-recorder,
+#custom-audiorec,
+#battery, 
+#clock, 
+#idle_inhibitor,
 #network {
+	padding: 0 10px;
 }
 
-#network.disconnected {
-    background: #f53c3c;
-}
-
-#pulseaudio {
-}
-
-#pulseaudio.muted {
-}
-
-#custom-spotify {
-    color: rgb(102, 220, 105);
-}
-
-#tray {
-}
