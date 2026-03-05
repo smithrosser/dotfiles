@@ -15,11 +15,16 @@ set $right l
 set $term wezterm
 # Your preferred application launcher
 set $menu rofi -show drun -show-icons
+set $menu ~/.config/rofi/launchers/type-4/launcher.sh
 
 ### Output configuration
 output DP-2 resolution 3440x1440@120Hz position 0,0
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/dotfiles/wallpapers/forest.jpg fill
+output * bg ~/dotfiles/wallpapers/pexels-3.jpg fill
+
+input "type:pointer" {
+    accel_profile flat
+    pointer_accel 0.2
+}
 
 # Doesn't work
 # seat * cursor_set_theme Adwaita 24
@@ -48,7 +53,7 @@ output * bg ~/dotfiles/wallpapers/forest.jpg fill
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'Log out?' -B 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
 #

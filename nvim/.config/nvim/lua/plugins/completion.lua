@@ -14,14 +14,13 @@ return {
                 end)(),
                 dependencies = {
                     -- A big collection of snippets for most languages
-                    {
-                        "rafamadriz/friendly-snippets",
-                        config = function()
-                            require("luasnip.loaders.from_vscode").lazy_load()
-                        end,
-                    },
+                    "rafamadriz/friendly-snippets",
                 },
                 opts = {},
+                config = function()
+                    require("luasnip.loaders.from_vscode").lazy_load()
+                    require("luasnip.loaders.from_snipmate").lazy_load({ paths = { "./snippets" } })
+                end,
             },
             { "hrsh7th/nvim-cmp", opts = {} }, -- Need to provide nvim-cmp for theme fallback
         },

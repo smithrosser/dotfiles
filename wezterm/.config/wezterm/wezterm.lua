@@ -12,8 +12,12 @@ local themes = {
         light = "Everforest Light Soft (Gogh)",
         dark = "Everforest Dark Soft (Gogh)",
     },
+    nord = {
+        light = "Nord Light (Gogh)",
+        dark = "Nord (Gogh)",
+    },
 }
-local theme_name = "everforest"
+local theme_name = "nord"
 
 --
 -- Automatically determine light/dark theme from OS appearance
@@ -37,79 +41,32 @@ wezterm.on("window-config-reloaded", function(window, pane)
 end)
 
 --
--- Commonly used font presets
---
-local fonts = {
-    recursive = {
-        name = "RecMonoCasual Nerd Font", -- font family name
-        weight = 450, -- font weight
-        italic = true, -- enable italics
-        features = {}, -- opentype features (stylistic sets, etc)
-        squeeze = false, -- reduced cell width
-    },
-    jetbrains = {
-        name = "JetBrainsMono Nerd Font", -- font family name
-        weight = 450, -- font weight
-        italic = true, -- enable italics
-        features = {}, -- opentype features (stylistic sets, etc)
-        squeeze = false, -- reduced cell width
-    },
-    fira_code = {
-        name = "FiraCode Nerd Font",
-        weight = 450,
-        italic = false,
-        features = {},
-        squeeze = false,
-    },
-    iosevka_term = {
-        name = "IosevkaTerm Nerd Font",
-        weight = 500,
-        italic = true,
-        features = { "ss07" },
-        squeeze = false,
-    },
-}
-local font_name = "recursive"
-
---
--- Generate font rule for disabling italics if requested
---
-local function get_italics_rules(enable)
-    if enable then
-        return {}
-    end
-    return {
-        {
-            italic = true,
-            font = wezterm.font({ family = fonts[font_name].name, italic = false }),
-        },
-    }
-end
-
---
 -- Configuration
 --
-return {
-    color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
-    font_size = 12,
-    font = wezterm.font({
-        family = fonts[font_name].name,
-        weight = fonts[font_name].weight,
-        harfbuzz_features = fonts[font_name].features,
-    }),
-    font_rules = get_italics_rules(fonts[font_name].italic),
+local config = wezterm.config_builder()
 
-    cell_width = (fonts[font_name].squeeze and 0.9) or 1,
-    -- line_height = 1.1,
+-- Color scheme settings
+config.color_scheme = scheme_for_appearance(wezterm.gui.get_appearance())
 
-    front_end = "WebGpu",
-    window_decorations = "RESIZE | INTEGRATED_BUTTONS",
-    window_padding = { left = 10, right = 10, top = 10, bottom = 10 },
+-- Font
+local fonts = require("fonts")
+local chosen_font = fonts["iosevka_term"]
+config.font_size = 12
+config.font = wezterm.font({
+    family = chosen_font.name,
+    weight = chosen_font.weight,
+    harfbuzz_features = chosen_font.features,
+})
+config.cell_width = fonts:get_cell_width(chosen_font)
+config.line_height = fonts:get_line_height(chosen_font)
 
-    enable_wayland = false,
-    enable_tab_bar = false,
-    enable_scroll_bar = false,
-    term = "wezterm",
+config.window_padding = { left = 10, right = 10, top = 10, bottom = 10 }
+config.window_decorations = "RESIZE | INTEGRATED_BUTTONS"
+config.enable_wayland = false
+config.enable_tab_bar = false
+config.enable_scroll_bar = false
+config.term = "wezterm"
 
-    default_prog = (wezterm.target_triple == "x86_64-pc-windows-msvc" and { "pwsh", "-nologo" }) or nil,
-}
+config.default_prog = (wezterm.target_triple == "x86_64-pc-windows-msvc" and { "pwsh", "-nologo" }) or nil
+
+return config

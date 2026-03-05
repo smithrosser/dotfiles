@@ -15,9 +15,9 @@
     "format": "{icon}{value}",
     "format-icons": {
       "1": "   ",
-      "2": "   ",
-      "3": "   ",
-      "4": "   ",
+      "2": "   ",
+      "3": "   ",
+      "4": "   ",
       "5": "   ",
       "default": "  ",
     },
@@ -32,7 +32,7 @@
   "clock": {
     "locale": "C",
     "format": "   {:%I:%M %p}",
-    "format-alt": "   {:%a,%b %d}", // Icon: calendar-alt
+    "format-alt": "   {:%a, %b %d}", // Icon: calendar-alt
   },
   "cpu": {
     "format": "   {usage}%",

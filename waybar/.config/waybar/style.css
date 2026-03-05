@@ -32,7 +32,7 @@ window#waybar {
 
 #workspaces button.active, #workspaces button.focused{
     color: black;
-    padding: 0 25px;
+    padding: 1px 25px;
     background: #7C9D96;
 }
 
@@ -53,6 +53,6 @@ window#waybar {
 #clock, 
 #idle_inhibitor,
 #network {
-	padding: 0 10px;
+	padding: 0 15px;
 }
 

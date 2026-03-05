@@ -38,11 +38,14 @@ return {
         clangd = {
             cmd = {
                 "clangd",
-                "--compile-commands-dir=/home/tsmithrosser/ws/firmware/worktrees/main/build",
                 "--background-index",
                 "--clang-tidy",
                 "--log=verbose",
             },
+            capabilities = {
+                offsetEncoding = { "utf-8" },
+            },
+            -- root_markers = { ".clangd", ".clang-tidy", "compile_commands.json", ".git" },
         },
 
         -- python

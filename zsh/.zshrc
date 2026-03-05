@@ -29,7 +29,6 @@ source $ZSH/oh-my-zsh.sh
 #  User configuration
 # =======================================================
 
-
 # Node version manager
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
@@ -39,6 +38,7 @@ export NVM_DIR="$HOME/.nvm"
 PATH_ADDITIONS="/home/$USER/.local/bin"
 export PATH="$PATH:${PATH_ADDITIONS}"
 
-# Extra utilities, secrets
+# Extra utilities
+source ~/ws/tools/rkscripts/rkscripts.sh
 source ~/.config/zsh/util.sh
 source ~/.config/zsh/work.sh

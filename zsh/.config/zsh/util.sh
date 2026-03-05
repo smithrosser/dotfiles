@@ -1,4 +1,7 @@
-# Various useful functions and aliases
+#
+# util.sh
+# Useful functions and aliases
+#
 
 alias please="sudo"
 

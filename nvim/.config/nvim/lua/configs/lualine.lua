@@ -24,6 +24,10 @@ return function()
                     end,
                 },
             },
+            lualine_x = {
+                { "filetype", separator = "/", padding = { left = 0, right = 1 } },
+                { "lsp_status" },
+            },
             lualine_y = {
                 { "progress", separator = " ", padding = { left = 1, right = 0 } },
                 { "location", padding = { left = 0, right = 1 } },
