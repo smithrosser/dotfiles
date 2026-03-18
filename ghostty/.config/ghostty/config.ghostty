@@ -1,0 +1,22 @@
+# Fonts
+font-size = 11
+font-family = "Google Sans Code"
+font-family-bold = "Google Sans Code ExtraBold"
+font-family-bold-italic = "Google Sans Code ExtraBold Italic"
+font-feature = calt
+font-feature = dlig
+
+# Appearance
+theme = TokyoNight
+window-padding-x = 5
+window-padding-y = 5
+window-padding-balance = true
+
+# Increase/decrease font size
+keybind = ctrl+equal=increase_font_size:1
+keybind = ctrl+plus=increase_font_size:1
+keybind = ctrl+minus=decrease_font_size:1
+keybind = ctrl+zero=reset_font_size
+
+# Try copying Ghostty terminfo to target when connecting
+shell-integration-features = ssh-terminfo
