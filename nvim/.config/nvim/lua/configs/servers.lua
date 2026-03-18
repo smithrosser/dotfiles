@@ -15,7 +15,6 @@ return {
                         return
                     end
                 end
-
                 client.config.settings.Lua = vim.tbl_deep_extend("force", client.config.settings.Lua, {
                     runtime = {
                         version = "LuaJIT",
@@ -34,31 +33,11 @@ return {
             },
         },
 
-        -- C/C++
-        clangd = {
-            cmd = {
-                "clangd",
-                "--background-index",
-                "--clang-tidy",
-                "--log=verbose",
-            },
-            capabilities = {
-                offsetEncoding = { "utf-8" },
-            },
-            -- root_markers = { ".clangd", ".clang-tidy", "compile_commands.json", ".git" },
-        },
-
-        -- python
-        pyright = {},
-
-        -- bash/zsh/sh
-        bashls = {},
-
         -- BrighterScript LSP (Roku Community LSP)
         bright_script = {
             cmd = { "bsc", "--lsp", "--stdio" },
             filetypes = { "brs", "xml", "brightscript" },
-            root_markers = { "bsconfig.json", ".git", "manifest", "Makefile", "makefile" },
+            root_markers = { "bsconfig.json", ".git", "manifest", "Makefile", "makefile", "source", "components" },
             settings = {
                 bsc = {
                     configFile = "./bsconfig.json",
@@ -66,6 +45,17 @@ return {
                 },
             },
         },
+
+        -- C/C++
+        cmake = {},
+        clangd = {},
+
+        -- Scripting
+        pyright = {},
+        bashls = {},
+
+        -- Web
+        ts_ls = {},
     },
 
     --

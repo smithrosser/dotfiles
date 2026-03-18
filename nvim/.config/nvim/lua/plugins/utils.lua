@@ -43,6 +43,14 @@ return {
         opts = {},
     },
 
+    -- Better macro handling
+    {
+        "chrisgrieser/nvim-recorder",
+        opts = {
+            display_messages = false,
+        },
+    },
+
     -- Pretty self-explanatory
     { "NMAC427/guess-indent.nvim", opts = {} },
 }

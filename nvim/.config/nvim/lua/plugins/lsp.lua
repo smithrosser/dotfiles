@@ -45,8 +45,8 @@ return {
             })
             require("mason-tool-installer").setup({ ensure_installed = utils })
 
-            -- Find rokucode executable, register '.brs' filetype
-            require("rokucode.lsp").setup({ auto_setup = false })
+            -- Register '.brs' filetype for LSP
+            require("extras.brightscript").register_filetypes()
 
             -- Now, configure & enable each LSP
             -- 'Flatten' manual/automatic install servers into single table for LSP enable step

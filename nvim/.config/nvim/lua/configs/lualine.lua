@@ -1,14 +1,8 @@
 return function()
     local lualine = require("lualine")
+    local recorder = require("recorder")
 
-    -- Add event handler to refresh lualine if recording starts/finishes
-    local function refresh()
-        lualine.refresh({ place = { "statusline" } })
-    end
-    vim.api.nvim_create_autocmd("RecordingEnter", { callback = refresh })
-    vim.api.nvim_create_autocmd("RecordingLeave", { callback = refresh })
-
-    require("lualine").setup({
+    lualine.setup({
         options = {
             component_separators = "",
             section_separators = { left = "", right = "" },
@@ -25,12 +19,14 @@ return function()
                 },
             },
             lualine_x = {
-                { "filetype", separator = "/", padding = { left = 0, right = 1 } },
-                { "lsp_status" },
+                {
+                    recorder.recordingStatus,
+                    color = { fg = "Character", gui = "bold" },
+                },
             },
             lualine_y = {
-                { "progress", separator = " ", padding = { left = 1, right = 0 } },
-                { "location", padding = { left = 0, right = 1 } },
+                { "filetype", separator = "/", padding = { left = 1, right = 1 } },
+                { "lsp_status" },
             },
             lualine_z = {
                 "filename",

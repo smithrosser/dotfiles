@@ -12,6 +12,15 @@ local themes = {
             vim.cmd.colorscheme("kanagawa")
         end,
     },
+    tokyonight = {
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require("tokyonight").setup({})
+            vim.cmd.colorscheme("tokyonight")
+        end,
+    },
     nord = {
         "gbprod/nord.nvim",
         lazy = false,
@@ -19,19 +28,6 @@ local themes = {
         config = function()
             require("nord").setup({})
             vim.cmd.colorscheme("nord")
-        end,
-    },
-    nordic = {
-        "AlexvZyl/nordic.nvim",
-        lazy = false,
-        priority = 1000,
-        config = function()
-            require("nordic").setup({
-                cursorline = {
-                    theme = "light",
-                },
-            })
-            vim.cmd.colorscheme("nordic")
         end,
     },
     everforest = {
@@ -48,7 +44,7 @@ local themes = {
     },
     default = {},
 }
-local selected = "nord"
+local selected = "tokyonight"
 
 return {
     { "typicode/bg.nvim", lazy = false },

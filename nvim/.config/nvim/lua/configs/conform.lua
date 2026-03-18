@@ -13,6 +13,7 @@ local formatters_by_ft = {
     jsonc = { "prettier" },
     yaml = { "prettier" },
     toml = { "prettier" },
+    markdown = { "prettier" },
     xml = { "xmlformatter" },
 }
 local lsp_fallback_exclusions = {

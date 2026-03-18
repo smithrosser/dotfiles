@@ -61,14 +61,25 @@ return {
         opts = { indent = { char = "│" } },
     },
 
-    -- fidget.nvim: better notifications
+    -- snacks.nvim: general QoL features
+    {
+        "folke/snacks.nvim",
+        priority = 1000,
+        lazy = false,
+        opts = {
+            input = { enabled = true },
+            select = { enabled = true },
+            notifier = { enabled = true },
+            picker = { enabled = true },
+        },
+    },
+
+    -- fidget.nvim: for LSP notifications (useful)
     {
         "j-hui/fidget.nvim",
         config = function()
             local fidget = require("fidget")
-
             fidget.setup({})
-            vim.notify = fidget.notify
         end,
     },
 
