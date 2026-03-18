@@ -21,8 +21,14 @@ M.themes = {
 M.selected_theme = "tokyonight"
 
 -- Helper function to get theme
-M.get_scheme = function(appearance)
-    return (M.themes[M.selected_theme].dark and appearance:find("Dark")) or M.themes[M.selected_theme].light
+M.get_scheme = function()
+    local appearance = wezterm.gui.get_appearance()
+
+    if appearance:find("Dark") then
+        return M.themes[M.selected_theme].dark
+    else
+        return M.themes[M.selected_theme].light
+    end
 end
 
 --

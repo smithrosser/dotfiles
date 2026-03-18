@@ -39,19 +39,6 @@ M.fallback_font = "fira_code"
 M.selected_font = "google"
 M.font_size = 11
 
---
--- Helper functions
---
-
-M.get_font = function(font_name)
-    local font = M.families[font_name]
-    return {
-        family = font.name,
-        weight = font.weight,
-        harfbuzz_features = font.features,
-    }
-end
-
 M.get_rules = function(font)
     local rules = {}
     if not font.allow_italics then
