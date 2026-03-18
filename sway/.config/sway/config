@@ -11,15 +11,14 @@ set $down j
 set $up k
 set $right l
 
-# Your preferred terminal emulator
-set $term wezterm
-# Your preferred application launcher
+# Preferred system applications & menus
+set $term ghostty
 set $menu rofi -show drun -show-icons
 set $menu ~/.config/rofi/launchers/type-4/launcher.sh
 
 ### Output configuration
 output DP-2 resolution 3440x1440@120Hz position 0,0
-output * bg ~/dotfiles/wallpapers/pexels-3.jpg fill
+output * bg ~/dotfiles/wallpapers/fog.png fill
 
 input "type:pointer" {
     accel_profile flat
@@ -41,6 +40,9 @@ input "type:pointer" {
 
     # Start your launcher
     bindsym $mod+Space exec $menu
+
+    # Win-Shift-S
+    bindsym $mod+Shift+s exec grim -g $(slurp) - | wl-copy
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -174,8 +176,8 @@ bar {
 
 # General appearance
 gaps {
-    inner 5
-    outer 5
+    inner 3
+    outer 3
 }
 default_border pixel 4
 default_floating_border normal
