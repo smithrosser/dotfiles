@@ -1,6 +1,7 @@
 local wezterm = require("wezterm")
+local M = {}
 
-return {
+M.families = {
     recursive = {
         name = "RecMonoCasual Nerd Font", -- font family name
         weight = 450, -- font weight
@@ -9,8 +10,8 @@ return {
         squeeze = false, -- reduce cell width
         squish = false, -- reduce line height
     },
-    offlig = {
-        name = "Offlig Nerd Font",
+    google = {
+        name = "Google Sans Code",
         weight = 400,
         allow_italic = true,
         features = {},
@@ -25,35 +26,54 @@ return {
         squeeze = false,
         squish = false,
     },
-    iosevka_term = {
+    iosevka = {
         name = "IosevkaTerm Nerd Font",
-        weight = 500,
+        weight = 400,
         allow_italic = true,
-        features = { "ss07" },
+        features = { "ss20" },
         squeeze = false,
-        squish = true,
+        squish = false,
     },
-
-    -- Helper functions
-    get_rules = function(font)
-        local rules = {}
-        if not font.allow_italics then
-            rules = {
-                {
-                    italic = true,
-                    font = wezterm.font({
-                        family = font.name,
-                        style = "Roman",
-                    }),
-                },
-            }
-        end
-        return rules
-    end,
-    get_cell_width = function(font)
-        return (font.squeeze and 0.9) or 1.0
-    end,
-    get_line_height = function(font)
-        return (font.squish and 0.9) or nil
-    end,
 }
+M.fallback_font = "fira_code"
+M.selected_font = "google"
+M.font_size = 11
+
+--
+-- Helper functions
+--
+
+M.get_font = function(font_name)
+    local font = M.families[font_name]
+    return {
+        family = font.name,
+        weight = font.weight,
+        harfbuzz_features = font.features,
+    }
+end
+
+M.get_rules = function(font)
+    local rules = {}
+    if not font.allow_italics then
+        rules = {
+            {
+                italic = true,
+                font = wezterm.font({
+                    family = font.name,
+                    style = "Roman",
+                }),
+            },
+        }
+    end
+    return rules
+end
+
+M.get_cell_width = function(font)
+    return (font.squeeze and 0.9) or 1.0
+end
+
+M.get_line_height = function(font)
+    return (font.squish and 0.9) or nil
+end
+
+return M
