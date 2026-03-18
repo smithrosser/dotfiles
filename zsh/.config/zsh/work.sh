@@ -20,4 +20,7 @@ if [[ "$COMPUTER_NAME" == "mousetrap" ]]; then
 
     # Add GC Toolbox to PATH
     export PATH="$PATH:/home/$USER/ws/tools/gc-toolbox/.venv/bin"
+
+    # Add zsh config scripts to PATH (e.g. logan-debug.sh)
+    export PATH="$PATH:$HOME/.config/zsh"
 fi

@@ -29,6 +29,10 @@ source $ZSH/oh-my-zsh.sh
 #  User configuration
 # =======================================================
 
+# Use neovim as a pager
+export PAGER="nvimpager"
+export MANPAGER="nvimpager"
+
 # Node version manager
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
@@ -39,6 +43,6 @@ PATH_ADDITIONS="/home/$USER/.local/bin"
 export PATH="$PATH:${PATH_ADDITIONS}"
 
 # Extra utilities
-source ~/ws/tools/rkscripts/rkscripts.sh
+[[ $COMPUTER_NAME == "mousetrap" ]] && source ~/ws/tools/rkscripts/rkscripts.sh
 source ~/.config/zsh/util.sh
 source ~/.config/zsh/work.sh
