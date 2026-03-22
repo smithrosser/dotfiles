@@ -1,4 +1,5 @@
 {
+  "output": ["DP-1", "DP-2", "DP-3"],
   "layer": "top",
   "position": "top",
   "modules-left": [
@@ -9,9 +10,10 @@
     "memory",
     "cpu",
     "temperature",
-    "sway/window",
+    // "sway/window",
+    "hyprland/window",
   ],
-  "modules-center": ["sway/workspaces"],
+  "modules-center": ["sway/workspaces", "hyprland/workspaces"],
   "modules-right": [
     "tray",
     "custom/clipboard",
@@ -25,6 +27,7 @@
   "custom/logo": {
     "format": "",
     "tooltip": false,
+    "on-click": "~/.config/hypr/scripts/power.sh",
   },
 
   "sway/workspaces": {
@@ -122,30 +125,41 @@
   "disk": {
     "interval": 30,
     "format": " {percentage_used}%",
-    "min-length": 6,
-    "max-length": 6,
+    "min-length": 5,
+    "max-length": 5,
     "path": "/",
   },
 
   "cpu": {
     "interval": 1,
     "format": " {usage}%",
-    "min-length": 6,
-    "max-length": 6,
+    "min-length": 5,
+    "max-length": 5,
     "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
   },
 
   "memory": {
     "format": " {percentage}%",
-    "min-length": 6,
-    "max-length": 6,
+    "min-length": 5,
+    "max-length": 5,
   },
 
   "sway/window": {
     "format": " {title} ",
-    "max-length": 80,
+    "max-length": 50,
     "rewrite": {
       "(.*) — Mozilla Firefox": "󰈹  $1",
+    },
+  },
+  "hyprland/window": {
+    "format": " {} ",
+    "separate-outputs": true,
+    "max-length": 50,
+    "rewrite": {
+      // This handles the long dash, the short dash, and any trailing spaces
+      "^(.*)[\\s\\u00A0][\\-–—][\\s\\u00A0]LibreWolf.*$": "󰈹 $1",
+      // Fallback for when only the app name is showing
+      "^LibreWolf$": "LibreWolf",
     },
   },
 
@@ -154,7 +168,7 @@
     "format-critical": " {temperatureC}°C",
     "interval": 1,
     "critical-threshold": 80,
-    "on-click": "foot btop",
+    "on-click": "ghostty btop",
   },
 
   "pulseaudio": {
