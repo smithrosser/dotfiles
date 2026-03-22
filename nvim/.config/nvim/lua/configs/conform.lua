@@ -6,7 +6,7 @@ local formatters_by_ft = {
     python = { "black" },
 
     c = {},
-    cpp = {},
+    cpp = { "clang-format" },
     brightscript = {},
 
     json = { "prettier" },

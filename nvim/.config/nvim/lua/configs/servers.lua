@@ -47,7 +47,7 @@ return {
         },
 
         -- C/C++
-        cmake = {},
+        -- cmake = {},
         clangd = {},
 
         -- Scripting

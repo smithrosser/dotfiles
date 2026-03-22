@@ -5,7 +5,35 @@ return {
         dependencies = {
             {
                 "rcarriga/nvim-dap-ui",
-                opts = {}, -- TODO remove some of the clutter in the debug UI later
+                opts = {
+                    layouts = {
+                        {
+                            -- The Right Panel (Locals)
+                            elements = {
+                                { id = "scopes", size = 1.0 }, -- "scopes" contains your local variables
+                            },
+                            position = "right",
+                            size = 40,
+                        },
+                        {
+                            -- The Bottom Panel (Console)
+                            elements = {
+                                { id = "repl", size = 1.0 },
+                            },
+                            position = "bottom",
+                            size = 10,
+                        },
+                    },
+                    controls = {
+                        enabled = true,
+                        element = "repl", -- This ensures the floating control bar remains active
+                    },
+                    floating = {
+                        max_height = nil,
+                        max_width = nil,
+                        border = "rounded",
+                    },
+                },
             },
             "nvim-neotest/nvim-nio",
             "jay-babu/mason-nvim-dap.nvim",
@@ -21,50 +49,17 @@ return {
                 command = "gdb",
                 args = { "--interpreter=dap", "--eval-command", "set print pretty on" },
             }
-            dap.adapters.gdb_multi = {
-                type = "executable",
-                command = "gdb-multiarch",
-                args = { "--interpreter=dap", "--eval-command", "set print pretty on" },
-            }
-
-            -- Logan rootfs location
-            local fw_root = vim.fn.expand("~") .. "/ws/fw/worktrees/main/port/realtek/stark/logan/dist/rootfs.prod"
-            -- Bazel workspace root (where /proc/self/cwd resolves at build time)
-            local src_root = vim.fn.expand("~") .. "/ws/roku/fw/worktrees/main/sources/rokuos/os"
 
             -- C/C++ configurations
             dap.configurations.cpp = {
                 {
-                    name = "[C++] Launch executable (prompt)",
+                    name = "[C++] Debug executable (CMake)",
                     type = "gdb",
                     request = "launch",
-                    program = function()
-                        return vim.fn.input("Executable: ", vim.fn.getcwd() .. "/", "file")
-                    end,
+                    program = require("extras.cmake").resolve_cmake_executable,
                     cwd = "${workspaceFolder}",
                     stopAtBeginningOfMainSubprogram = false,
-                },
-                {
-                    name = "[C++] Attach to Logan Application",
-                    type = "gdb_multi",
-                    request = "attach",
-                    program = fw_root .. "/bin/Application",
-                    target = (vim.fn.getenv("ROKU_DEV_TARGET") or "") .. ":5555",
-                    cwd = "${workspaceFolder}",
-                    initCommands = {
-                        "set style enabled off",
-                        "set pagination off",
-                        "set sysroot " .. fw_root,
-                        "set solib-absolute-prefix " .. fw_root,
-                        "add-auto-load-safe-path " .. fw_root,
-                        -- Bazel records comp_dir as /proc/self/cwd. GDB expands that symlink
-                        -- against its own /proc/self/cwd (i.e. GDB's working directory).
-                        -- By cding to src_root, DWARF paths resolve to src_root/RokuOS/...
-                        -- which matches the absolute paths nvim-dap sends for breakpoints.
-                        "cd " .. src_root,
-                        "handle SIG38 noprint nostop",
-                        "handle SIG33 noprint nostop",
-                    },
+                    console = "internalConsole",
                 },
             }
 
@@ -90,18 +85,10 @@ return {
             vim.api.nvim_set_hl(0, "DapStopped", { fg = "#9ece6a" }) -- green
 
             -- Auto open/close dapui window on specific events
-            dap.listeners.before.attach.dapui_config = function()
-                dapui.open()
-            end
-            dap.listeners.before.launch.dapui_config = function()
-                dapui.open()
-            end
-            dap.listeners.before.event_terminated.dapui_config = function()
-                dapui.close()
-            end
-            dap.listeners.before.event_exited.dapui_config = function()
-                dapui.close()
-            end
+            dap.listeners.before.attach.dapui_config = dapui.open
+            dap.listeners.before.launch.dapui_config = dapui.open
+            dap.listeners.before.event_terminated.dapui_config = dapui.close
+            dap.listeners.before.event_exited.dapui_config = dapui.close
         end,
     },
 }
