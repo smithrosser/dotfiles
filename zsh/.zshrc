@@ -5,6 +5,7 @@ export ZSH="$HOME/.oh-my-zsh"
 case $(hostname) in
         (LG7790373X) export COMPUTER_NAME="macbook" ;;
         (PT2510011) export COMPUTER_NAME="mousetrap" ;;
+        (potato) export COMPUTER_NAME="potato" ;;
         (*)	export COMPUTER_NAME="toaster" ;;
 esac
 
