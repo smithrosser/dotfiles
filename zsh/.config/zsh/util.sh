@@ -80,3 +80,17 @@ clear() {
     echo "did you mean '^L?'"
 }
 
+# Pacman aliases
+alias spi="sudo pacman -Syu"
+alias spr="sudo pacman -R"
+
+# Launch tmux
+tm() {
+    if [[ $# -eq 0 ]]; then
+        # No argument supplied, list current sessions
+        tmux list-sessions
+    else
+        # Argument supplied, try to attach or create
+        tmux attach-session -t "$1" 2>/dev/null || tmux new-session -s "$1"
+    fi
+}
