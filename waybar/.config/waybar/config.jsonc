@@ -124,7 +124,7 @@
 
   "disk": {
     "interval": 30,
-    "format": " {percentage_used}%",
+    "format": "   {percentage_used}%",
     "min-length": 5,
     "max-length": 5,
     "path": "/",
@@ -132,14 +132,14 @@
 
   "cpu": {
     "interval": 1,
-    "format": " {usage}%",
+    "format": "   {usage}%",
     "min-length": 5,
     "max-length": 5,
     "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
   },
 
   "memory": {
-    "format": " {percentage}%",
+    "format": "   {percentage}%",
     "min-length": 5,
     "max-length": 5,
   },
@@ -152,9 +152,9 @@
     },
   },
   "hyprland/window": {
-    "format": " {} ",
+    "format": "  {}  ",
     "separate-outputs": true,
-    "max-length": 50,
+    "max-length": 60,
     "rewrite": {
       // This handles the long dash, the short dash, and any trailing spaces
       "^(.*)[\\s\\u00A0][\\-–—][\\s\\u00A0]LibreWolf.*$": "󰈹 $1",
