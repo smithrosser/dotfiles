@@ -68,6 +68,7 @@
 
   "clock": {
     "format": "{:%a, %d %b ⋅ %H:%M:%S}",
+    "min-length": 18,
     "interval": 1,
     "tooltip-format": "\n<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "calendar-weeks-pos": "right",
