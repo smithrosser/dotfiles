@@ -3,8 +3,6 @@ local fonts = require("fonts")
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
-print("Loading config...")
-
 -- Color scheming
 config.color_scheme = color_schemes:get_scheme()
 
@@ -12,7 +10,7 @@ config.color_scheme = color_schemes:get_scheme()
 local selected_font = fonts.families[fonts.selected_font]
 local fallback_font = fonts.families[fonts.fallback_font]
 
-config.font_size = fonts.size
+config.font_size = fonts.font_size
 config.font = wezterm.font_with_fallback({
     {
         family = selected_font.name,

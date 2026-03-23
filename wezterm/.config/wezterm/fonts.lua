@@ -20,7 +20,7 @@ M.families = {
     },
     fira_code = {
         name = "FiraCode Nerd Font",
-        weight = 400,
+        weight = 450,
         allow_italic = false,
         features = { "zero", "ss02", "cv16", "cv30", "cv31" },
         squeeze = false,
@@ -36,7 +36,7 @@ M.families = {
     },
 }
 M.fallback_font = "fira_code"
-M.selected_font = "google"
+M.selected_font = "fira_code"
 M.font_size = 11
 
 M.get_rules = function(font)
