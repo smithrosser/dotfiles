@@ -9,7 +9,7 @@ function M.register_filetypes()
             -- Match SceneGraph XML files in Roku projects
             [".*%.xml"] = {
                 priority = -math.huge, -- Low priority, let other plugins detect XML first
-                function(path, bufnr)
+                function(_, bufnr)
                     -- Only treat as BrightScript XML if it's in a Roku project
                     local content = vim.api.nvim_buf_get_lines(bufnr, 0, 50, false)
                     for _, line in ipairs(content) do

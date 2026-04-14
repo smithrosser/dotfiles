@@ -1,21 +1,26 @@
 # Fonts
-font-size = 11
+font-size = 12.5
 font-family = "Google Sans Code"
-font-family-bold = "Google Sans Code ExtraBold"
-font-family-bold-italic = "Google Sans Code ExtraBold Italic"
-font-feature = calt
-font-feature = dlig
+# font-feature = ss01
+
+adjust-cell-height = 4
 
 # Appearance
-theme = TokyoNight
+theme = light:TokyoNight Day,dark:TokyoNight Storm
 window-padding-x = 5
 window-padding-y = 5
 window-padding-balance = true
 
 # Increase/decrease font size
+# keybind = ctrl+equal=increase_font_size
+# keybind = ctrl+plus=increase_font_size
+# keybind = ctrl+minus=decrease_font_size
+# keybind = ctrl+zero=reset_font_size
+
 keybind = ctrl+equal=increase_font_size:1
-keybind = ctrl+plus=increase_font_size:1
+keybind = ctrl+shift+equal=increase_font_size:1
 keybind = ctrl+minus=decrease_font_size:1
+keybind = ctrl+shift+minus=decrease_font_size:1
 keybind = ctrl+zero=reset_font_size
 
 # Try copying Ghostty terminfo to target when connecting

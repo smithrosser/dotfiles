@@ -3,10 +3,10 @@ return function()
     local recorder = require("recorder")
 
     lualine.setup({
-        options = {
-            component_separators = "",
-            section_separators = { left = "", right = "" },
-        },
+        -- options = {
+        --     component_separators = "",
+        --     section_separators = { left = "", right = "" },
+        -- },
         sections = {
             lualine_c = {
                 {

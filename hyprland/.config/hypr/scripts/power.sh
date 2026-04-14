@@ -18,7 +18,7 @@ choice=$(printf '%s\n' "${options[@]}" | walker --dmenu)
 # Execute choice
 case "$choice" in
     "$OPT_LOGOUT")
-        hyprctl dispatch exit
+        uwsm stop
         ;;
     "$OPT_SUSPEND")
         systemctl suspend

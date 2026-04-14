@@ -46,6 +46,10 @@ return {
             },
         },
 
+        -- Systems languages
+        rust_analyzer = {},
+        gopls = {},
+
         -- C/C++
         -- cmake = {},
         clangd = {},

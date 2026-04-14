@@ -36,7 +36,7 @@ M.families = {
     },
 }
 M.fallback_font = "fira_code"
-M.selected_font = "fira_code"
+M.selected_font = "google"
 M.font_size = 11
 
 M.get_rules = function(font)

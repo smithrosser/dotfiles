@@ -1,5 +1,5 @@
 {
-  "output": ["DP-1", "DP-2", "DP-3"],
+  "output": ["HDMI-A-1", "DP-1", "DP-2", "DP-3"],
   "layer": "top",
   "position": "top",
   "modules-left": [
@@ -10,17 +10,16 @@
     "memory",
     "cpu",
     "temperature",
-    // "sway/window",
-    "hyprland/window",
+    "sway/window",
   ],
-  "modules-center": ["sway/workspaces", "hyprland/workspaces"],
+  "modules-center": ["hyprland/workspaces"],
   "modules-right": [
     "tray",
     "custom/clipboard",
     "idle_inhibitor",
-    // "bluetooth",
     "pulseaudio",
     "network",
+    "custom/theme",
   ],
   "reload_style_on_change": true,
 
@@ -29,11 +28,15 @@
     "tooltip": false,
     "on-click": "~/.config/hypr/scripts/power.sh",
   },
+  "custom/theme": {
+    "format": " ",
+    "on-click": "~/.config/hypr/scripts/theme.sh",
+  },
 
   "sway/workspaces": {
     "disable-scroll": false,
     "all-outputs": false,
-    "format": "{icon}  {value}",
+    "format": "{icon}   {value}",
     "format-icons": {
       "1": "",
       "2": "",
@@ -42,6 +45,17 @@
       "5": "",
       "default": "",
     },
+  },
+  "hyprland/workspaces": {
+    // "format": "{icon}   {value}",
+    // "format-icons": {
+    //   "1": "",
+    //   "2": "",
+    //   "3": "",
+    //   "4": "",
+    //   "5": "",
+    //   "default": "",
+    // },
   },
 
   "idle_inhibitor": {
@@ -126,23 +140,23 @@
   "disk": {
     "interval": 30,
     "format": "   {percentage_used}%",
-    "min-length": 5,
-    "max-length": 5,
+    "min-length": 8,
+    "max-length": 8,
     "path": "/",
   },
 
   "cpu": {
     "interval": 1,
     "format": "   {usage}%",
-    "min-length": 5,
-    "max-length": 5,
+    "min-length": 8,
+    "max-length": 8,
     "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
   },
 
   "memory": {
     "format": "   {percentage}%",
-    "min-length": 5,
-    "max-length": 5,
+    "min-length": 8,
+    "max-length": 8,
   },
 
   "sway/window": {

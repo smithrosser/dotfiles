@@ -44,3 +44,6 @@ end, { desc = "[T]oggle floating [t]erminal" })
 vim.keymap.set("n", "<leader>th", function()
     vim.o.background = vim.o.background == "dark" and "light" or "dark"
 end, { desc = "Toggle dark/light [th]eme" })
+
+vim.keymap.set("n", "<leader>oo", ":ObsidianToday<CR>", { desc = "[O]pen today's [o]bsidian log" })
+vim.keymap.set("n", "<leader>od", ":ObsidianFollowLink<CR>", { desc = "[O]pen today's [o]bsidian log" })

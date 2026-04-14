@@ -3,8 +3,6 @@
   // Editor appearance
   //
   "window.autoDetectColorScheme": true,
-  "workbench.preferredDarkColorTheme": "Tokyo Night Storm",
-  "workbench.preferredLightColorTheme": "Tokyo Night Light",
   "editor.minimap.enabled": false,
   "editor.cursorBlinking": "solid",
   "editor.bracketPairColorization.enabled": false,
@@ -14,13 +12,13 @@
   //
   // Fonts
   //
-  "terminal.integrated.fontFamily": "FiraMono Nerd Font",
-  "debug.console.fontFamily": "FiraMono Nerd Font",
+  "terminal.integrated.fontFamily": "Google Sans Code",
+  "debug.console.fontFamily": "Google Sans Code",
   "[Log][log]": {
-    "editor.fontFamily": "FiraMono Nerd Font",
+    "editor.fontFamily": "Google Sans Code",
     "editor.fontSize": 13,
   },
-  "editor.fontFamily": "FiraCode Nerd Font",
+  "editor.fontFamily": "Google Sans Code",
   "editor.fontSize": 13,
   "editor.fontWeight": 500,
   // "editor.fontLigatures": "'ss07'",
@@ -60,4 +58,5 @@
   "workbench.editor.empty.hint": "hidden",
   "explorer.excludeGitIgnore": true,
   "git.autofetch": true,
+  "workbench.preferredLightColorTheme": "Dark 2026",
 }

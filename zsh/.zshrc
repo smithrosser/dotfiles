@@ -33,6 +33,7 @@ source $ZSH/oh-my-zsh.sh
 # Use neovim as a pager
 export PAGER="nvimpager"
 export MANPAGER="nvimpager"
+export EDITOR="nvim"
 
 # Node version manager
 export NVM_DIR="$HOME/.nvm"
@@ -40,7 +41,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Extra PATH locations
-PATH_ADDITIONS="/home/$USER/.local/bin"
+PATH_ADDITIONS="$HOME/.local/bin:$HOME/go/bin:$HOME/.cargo/bin:/opt/logseq"
 export PATH="$PATH:${PATH_ADDITIONS}"
 
 # Extra utilities

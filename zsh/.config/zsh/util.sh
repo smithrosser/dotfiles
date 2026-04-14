@@ -35,6 +35,13 @@ vivi() {
     popd
 }
 
+# Open today's Obsidian entry
+vio() {
+    pushd ~/ws/obsidian/Work
+    nvim -c "ObsidianToday"
+    popd
+}
+
 # Quick access to workspace folders
 ws() {
     cd ~/ws/$1/$2
@@ -53,16 +60,6 @@ alias lsa='ls -a'
 alias lt='eza --tree --level=2 --long --icons --git'
 alias lta='lt -a'
 alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
-alias cd="zd"
-zd() {
-    if [ $# -eq 0 ]; then
-        builtin cd ~ && return
-    elif [ -d "$1" ]; then
-        builtin cd "$1"
-    else
-        z "$@" && printf "\U000F17A9 " && pwd || echo "Error: Directory not found"
-    fi
-}
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -76,9 +73,7 @@ alias cm="cmake"
 alias ct="ctest --output-on-failure"
 
 # Suppress 'clear' command so I can scroll up still
-clear() {
-    echo "did you mean '^L?'"
-}
+clear() { echo "did you mean '^L?'" }
 
 # Pacman aliases
 alias spi="sudo pacman -Syu"
@@ -94,3 +89,13 @@ tm() {
         tmux attach-session -t "$1" 2>/dev/null || tmux new-session -s "$1"
     fi
 }
+
+# Enter automated tests shell
+atshell() {
+    local container_id="$(docker ps | grep "automated-tests" | awk '{ print $1 }')"
+    echo $container_id
+
+    docker exec -it -w "/root/automated_tests" $container_id bash -lc 'exec bash'
+}
+
+
