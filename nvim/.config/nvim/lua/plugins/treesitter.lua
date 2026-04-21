@@ -5,11 +5,17 @@ return {
         config = function()
             local parsers = require("configs.parsers")
 
+            -- Set up custom BrightScript tree-sitter parser
+            vim.opt.runtimepath:prepend(vim.fn.expand("~/ws/poc/tree-sitter-brs"))
+            vim.treesitter.language.register("brs", "brightscript")
+
             require("nvim-treesitter").install(parsers)
+            local ft_patterns = vim.list_extend({ "brightscript" }, parsers)
             vim.api.nvim_create_autocmd("FileType", {
-                pattern = parsers,
+                pattern = ft_patterns,
                 callback = function()
                     vim.treesitter.start()
+                    vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
                 end,
             })
         end,

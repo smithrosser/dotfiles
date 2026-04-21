@@ -12,5 +12,4 @@ return {
     "query",
     "vim",
     "vimdoc",
-    "brightscript",
 }

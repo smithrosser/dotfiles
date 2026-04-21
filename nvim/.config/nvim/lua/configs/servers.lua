@@ -34,17 +34,17 @@ return {
         },
 
         -- BrighterScript LSP (Roku Community LSP)
-        bright_script = {
-            cmd = { "bsc", "--lsp", "--stdio" },
-            filetypes = { "brs", "xml", "brightscript" },
-            root_markers = { "bsconfig.json", ".git", "manifest", "Makefile", "makefile", "source", "components" },
-            settings = {
-                bsc = {
-                    configFile = "./bsconfig.json",
-                    diagnosticFilters = true,
-                },
-            },
-        },
+        -- bright_script = {
+        --     cmd = { "bsc", "--lsp", "--stdio" },
+        --     filetypes = { "brs", "xml", "brightscript" },
+        --     root_markers = { "bsconfig.json", ".git", "manifest", "Makefile", "makefile", "source", "components" },
+        --     settings = {
+        --         bsc = {
+        --             configFile = "./bsconfig.json",
+        --             diagnosticFilters = true,
+        --         },
+        --     },
+        -- },
 
         -- Systems languages
         rust_analyzer = {},
@@ -86,5 +86,12 @@ return {
         --         },
         --     },
         -- },
+
+        -- Tom's experimental BrightScript LSP
+        brs_ls = {
+            cmd = { "node", "/home/tsmithrosser/ws/poc/brs-ls/dist/server.js", "--stdio" },
+            filetypes = { "brightscript", "brs" },
+            root_markers = { "manifest", ".git" },
+        },
     },
 }

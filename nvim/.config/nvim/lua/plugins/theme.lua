@@ -1,17 +1,5 @@
 local themes = {
-    -- Themes should be able to change based on vim.o.background
-    kanagawa = {
-        "rebelot/kanagawa.nvim",
-        lazy = false,
-        priority = 1000,
-        config = function()
-            require("kanagawa").setup({
-                background = { dark = "wave", light = "lotus" },
-                colors = { theme = { all = { ui = { bg_gutter = "none" } } } },
-            })
-            vim.cmd.colorscheme("kanagawa")
-        end,
-    },
+    -- for lualine only
     tokyonight = {
         "folke/tokyonight.nvim",
         lazy = false,
@@ -24,30 +12,22 @@ local themes = {
             vim.cmd.colorscheme("tokyonight")
         end,
     },
-    nord = {
-        "gbprod/nord.nvim",
+    github = {
+        "projekt0n/github-nvim-theme",
+        name = "github-theme",
+        dependencies = { "scottmckendry/cyberdream.nvim" },
         lazy = false,
         priority = 1000,
         config = function()
-            require("nord").setup({})
-            vim.cmd.colorscheme("nord")
-        end,
-    },
-    everforest = {
-        "neanias/everforest-nvim",
-        version = false,
-        lazy = false,
-        priority = 1000,
-        config = function()
-            require("everforest").setup({
-                background = "soft",
-            })
-            vim.cmd.colorscheme("everforest")
+            require("cyberdream").setup({})
+            require("github-theme").setup({})
+
+            vim.cmd.colorscheme("github_light")
         end,
     },
     default = {},
 }
-local selected = "tokyonight"
+local selected = "github"
 
 return {
     { "typicode/bg.nvim", lazy = false },

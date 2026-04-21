@@ -30,12 +30,31 @@ return function()
     local builtin = require("telescope.builtin")
 
     -- Search available Telescope pickers
+
+    -- Search project files
     vim.keymap.set("n", "<leader><leader>", builtin.find_files, { desc = "Search files" })
+
+    -- Search inside project files
     vim.keymap.set("n", "<leader>.", builtin.live_grep, { desc = "Search files for keyword" })
+
+    -- Search inside project files for word under cursor
     vim.keymap.set("n", "<leader>>", function()
         require("telescope.builtin").live_grep({ default_text = vim.fn.expand("<cword>") })
     end, { desc = "Search files for keyword under cursor" })
+
+    -- Search Telescope pickers
+    vim.keymap.set(
+        "n",
+        "<leader>,",
+        builtin.lsp_dynamic_workspace_symbols,
+        { desc = "Telescope: search workspace symbols" }
+    )
+
+    -- Fuzzy search current file
     vim.keymap.set("n", "<C-_>", builtin.current_buffer_fuzzy_find, { desc = "Search current file" })
+
+    -- Search git status
     vim.keymap.set("n", "<leader>gg", builtin.git_status, { desc = "Search git diffs" })
+
     vim.keymap.set("n", "<leader>ss", builtin.builtin, { desc = "Telescope [s]earch [s]elect" })
 end

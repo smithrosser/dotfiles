@@ -12,14 +12,14 @@
   //
   // Fonts
   //
-  "terminal.integrated.fontFamily": "Google Sans Code",
-  "debug.console.fontFamily": "Google Sans Code",
+  "terminal.integrated.fontFamily": "RecMonoCasual Nerd Font",
+  "debug.console.fontFamily": "RecMonoCasual Nerd Font",
   "[Log][log]": {
-    "editor.fontFamily": "Google Sans Code",
+    "editor.fontFamily": "RecMonoCasual Nerd Font",
     "editor.fontSize": 13,
   },
-  "editor.fontFamily": "Google Sans Code",
-  "editor.fontSize": 13,
+  "editor.fontFamily": "RecMonoCasual Nerd Font",
+  "editor.fontSize": 14,
   "editor.fontWeight": 500,
   // "editor.fontLigatures": "'ss07'",
   "terminal.integrated.fontSize": 12,
@@ -46,6 +46,10 @@
       "before": ["leader", "leader"],
       "commands": ["workbench.action.quickOpen"],
     },
+    {
+      "before": ["leader", "backspace"],
+      "commands": ["workbench.action.navigateBack"],
+    },
   ],
   "vim.visualModeKeyBindings": [
     { "before": ["leader", "/"], "commands": ["editor.action.commentLine"] },
@@ -58,5 +62,5 @@
   "workbench.editor.empty.hint": "hidden",
   "explorer.excludeGitIgnore": true,
   "git.autofetch": true,
-  "workbench.preferredLightColorTheme": "Dark 2026",
+  "chat.disableAIFeatures": true,
 }

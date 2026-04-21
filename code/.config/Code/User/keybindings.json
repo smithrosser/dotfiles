@@ -4,44 +4,56 @@
   //
   {
     "key": "ctrl+shift+,",
-    "command": "workbench.action.openSettingsJson"
+    "command": "workbench.action.openSettingsJson",
   },
   {
     "key": "ctrl+shift+alt+,",
-    "command": "workbench.action.openGlobalKeybindingsFile"
+    "command": "workbench.action.openGlobalKeybindingsFile",
   },
+
   //
-  // Code completion
+  // Disable native tab handling
   //
   {
     "key": "tab",
     "command": "-acceptSelectedSuggestion",
-    "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
+    "when": "suggestWidgetVisible",
   },
   {
     "key": "tab",
+    "command": "-editor.emmet.action.expandAbbreviation",
+    "when": "config.emmet.triggerExpansionOnTab && editorTextFocus && !editorReadonly && !editorTabMovesFocus",
+  },
+
+  //
+  // Neovim-style code completion
+  //
+  {
+    "key": "ctrl+n",
     "command": "selectNextSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus && !inSnippetMode"
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible",
   },
   {
-    "key": "shift+tab",
+    "key": "ctrl+p",
     "command": "selectPrevSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus && !inSnippetMode"
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible",
   },
+  {
+    "key": "ctrl+y",
+    "command": "acceptSelectedSuggestion",
+    "when": "suggestWidgetVisible",
+  },
+
   //
   // Workbench navigation
   //
   {
     "key": "ctrl+h",
-    "command": "workbench.action.focusSideBar"
+    "command": "workbench.action.focusSideBar",
   },
   {
     "key": "ctrl+l",
     "command": "workbench.action.focusActiveEditorGroup",
-    "when": "!panelFocus"
+    "when": "!panelFocus",
   },
-  {
-    "key": "ctrl+;",
-    "command": "workbench.action.togglePanel"
-  }
 ]

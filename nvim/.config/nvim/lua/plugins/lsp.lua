@@ -46,7 +46,8 @@ return {
             require("mason-tool-installer").setup({ ensure_installed = utils })
 
             -- Register '.brs' filetype for LSP
-            require("extras.brightscript").register_filetypes()
+            local brs_extras = require("extras.brightscript")
+            brs_extras.register_filetypes()
 
             -- Now, configure & enable each LSP
             -- 'Flatten' manual/automatic install servers into single table for LSP enable step

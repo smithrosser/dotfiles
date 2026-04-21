@@ -1,12 +1,13 @@
 # Fonts
-font-size = 12.5
-font-family = "Google Sans Code"
+font-size = 12
+font-family = "RecMonoCasual Nerd Font"
+
 # font-feature = ss01
 
-adjust-cell-height = 4
+# adjust-cell-height = 4
 
 # Appearance
-theme = light:TokyoNight Day,dark:TokyoNight Storm
+theme = light:GitHub Light Default,dark:GitHub Dark Default
 window-padding-x = 5
 window-padding-y = 5
 window-padding-balance = true

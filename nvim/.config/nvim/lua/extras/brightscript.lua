@@ -1,5 +1,9 @@
 local M = {}
 
+-- Path to a local tree-sitter-brs repo checkout
+-- NOTE make sure a compiled brs.so is present
+M.parser_root = vim.fn.expand("~/ws/poc/tree-sitter-brs")
+
 function M.register_filetypes()
     vim.filetype.add({
         extension = {

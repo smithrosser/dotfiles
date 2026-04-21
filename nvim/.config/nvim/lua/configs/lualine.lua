@@ -2,12 +2,34 @@ return function()
     local lualine = require("lualine")
     local recorder = require("recorder")
 
+    require("cyberdream").setup({ variant = "light" })
     lualine.setup({
-        -- options = {
-        --     component_separators = "",
-        --     section_separators = { left = "", right = "" },
-        -- },
+        options = {
+            theme = "cyberdream",
+        },
         sections = {
+            lualine_a = {
+                {
+                    "mode",
+                    fmt = function(str)
+                        -- Custom mapping for abbreviations
+                        local mode_map = {
+                            ["NORMAL"] = "N",
+                            ["INSERT"] = "I",
+                            ["VISUAL"] = "V",
+                            ["V-LINE"] = "V-L",
+                            ["V-BLOCK"] = "V-B",
+                            ["SELECT"] = "S",
+                            ["S-LINE"] = "S-L",
+                            ["S-BLOCK"] = "S-B",
+                            ["REPLACE"] = "R",
+                            ["COMMAND"] = "C",
+                            ["TERMINAL"] = "T",
+                        }
+                        return mode_map[str] or str
+                    end,
+                },
+            },
             lualine_c = {
                 {
                     function()
